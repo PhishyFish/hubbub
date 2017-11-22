@@ -1,0 +1,55 @@
+html, body, main {
+  width: 100%;
+  min-width: 320px;
+  height: 100%;
+}
+
+body {
+  font-family: $sans-serif;
+  color: #fff;
+  background: $black;
+}
+
+html, body, button, input {
+  text-rendering: optimizeLegibility;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Nunito', $sans-serif;
+  font-weight: bold;
+  text-rendering: geometricPrecision;
+}
+
+h1 {
+  font-size: 36px;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+header a {
+  opacity: 0.8;
+}
+
+header a:hover {
+  opacity: 1;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 50px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
