@@ -13,3 +13,7 @@
  *= require_tree .
  *= require_self
  */
+
+body {
+  font-family: 'Nunito', 'Helvetica', 'Helvetica Neue', 'Segoe UI', 'Arial', sans-serif;
+}
