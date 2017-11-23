@@ -35,7 +35,8 @@ class SessionForm extends React.Component {
         <ul>
           {this.props.errors.map((error, i) => (
             <li key={`error-${i}`}>
-              {error}
+              <i className="fa fa-exclamation-circle" aria-hidden="true"></i>
+              &nbsp; {error}
             </li>
           ))}
         </ul>
