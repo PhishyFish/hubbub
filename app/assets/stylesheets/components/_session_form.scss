@@ -1,8 +1,13 @@
-.session-form-container {
+.session-form-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 100%;
   height: 100%;
   background-size: cover;
   background-position: center;
-  animation: bgFade 5s;
+  animation: bgFade 4s;
 }
 
 @keyframes bgFade {
@@ -14,11 +19,16 @@
   }
 }
 
-.session-form-outer {
+.session-form-container {
+  height: 100%;
+}
+
+.session-form-box {
   display: flex;
   border-radius: 3px;
   overflow: hidden;
   width: 630px;
+  box-sizing: border-box;
 }
 
 .session-form-logo {
@@ -82,7 +92,7 @@
 .session-form button {
   margin-top: 40px;
   width: 100%;
-  box-sizing: border-box;
+  // box-sizing: border-box;
   background: $purple;
   color: #fff;
 }
@@ -105,4 +115,22 @@
 .session-form footer a:hover {
   border-bottom: 2px solid #fff;
   padding-bottom: 5px;
+}
+
+@media (max-width: 629px) {
+  .session-form-box {
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+  }
+
+  .session-form-container, .session-form-logo, .session-form {
+    width: 100%;
+    background: $black;
+    // box-sizing: border-box;
+  }
+
+  .session-form {
+    padding-top: 0;
+  }
 }

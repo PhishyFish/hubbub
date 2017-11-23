@@ -3,6 +3,7 @@ import { Route, Link, Redirect, Switch } from 'react-router-dom';
 
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import SessionFormContainer from './session_form/session_form_container';
+import SessionFormBackground from './session_form/session_form_background';
 
 const splash = () => (
   <div className="flex-column-center">
@@ -38,6 +39,9 @@ const channels = () => (
 const App = () => (
   <div>
     <ProtectedRoute path="/channels" component={channels} />
+    <AuthRoute path="/login" component={SessionFormBackground} />
+    <AuthRoute path="/register" component={SessionFormBackground} />
+
     <Switch>
       <AuthRoute exact path="/" component={splash} />
       <AuthRoute path="/login" component={SessionFormContainer} />
