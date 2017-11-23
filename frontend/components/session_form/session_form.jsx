@@ -1,8 +1,6 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
 
-import SessionFormBackground from './session_form_background';
-
 class SessionForm extends React.Component {
   constructor(props) {
     super(props);

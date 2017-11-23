@@ -17,8 +17,10 @@ class Splash extends React.Component {
     let randomNum = Math.floor(demoUsers.length * Math.random());
 
     const demoUser = {
-      username: demoUsers[randomNum],
-      password: 'password'
+      user: {
+        username: demoUsers[randomNum],
+        password: 'password'
+      }
     };
 
     return this.props.login(demoUser);
