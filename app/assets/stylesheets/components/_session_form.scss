@@ -1,8 +1,17 @@
 .session-form-container {
   height: 100%;
-  background-image: url('http://www.creativeuncut.com/gallery-31/art/lozbotw-world-background.jpg');
   background-size: cover;
   background-position: center;
+  animation: bgFade 5s;
+}
+
+@keyframes bgFade {
+  from {
+    opacity: 0.2;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 .session-form-outer {

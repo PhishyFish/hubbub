@@ -1,23 +1,17 @@
 header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
+  min-width: 90%;
   padding: 20px;
   box-sizing: border-box;
 }
 
-header a {
+nav a {
   opacity: 0.8;
 }
 
-header a:hover {
+nav a:hover {
   opacity: 1;
 }
 
 nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   width: 50px;
 }

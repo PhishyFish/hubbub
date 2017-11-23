@@ -24,7 +24,13 @@ h1 {
   font-size: 36px;
 }
 
-.form-center {
+.flex-space-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.flex-column-center {
   display: flex;
   flex-direction: column;
   justify-content: center;

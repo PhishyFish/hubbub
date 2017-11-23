@@ -1,17 +1,18 @@
 import React from 'react';
-import { Route, Link } from 'react-router-dom';
+import { Route, Link, Redirect, Switch } from 'react-router-dom';
 
+import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import SessionFormContainer from './session_form/session_form_container';
 
 const splash = () => (
-  <div className="container">
-    <header>
+  <div className="flex-column-center">
+    <header className="flex-space-between">
       <h1>Hubbub</h1>
-      <nav>
-        <a href="#" aria-label="Vickie's GitHub">
+      <nav className="flex-space-between">
+        <a href="https://www.github.com/phishyfish" aria-label="Vickie's GitHub">
           <i className="fa fa-github fa-lg" aria-hidden="true"></i>
         </a>
-        <a href="#" aria-label="Vickie's LinkedIn">
+        <a href="https://www.linkedin.com/in/vickie-chen" aria-label="Vickie's LinkedIn">
           <i className="fa fa-linkedin fa-lg" aria-hidden="true"></i>
         </a>
       </nav>
@@ -30,11 +31,18 @@ const splash = () => (
   </div>
 );
 
+const channels = () => (
+  <h1>Channels</h1>
+);
+
 const App = () => (
   <div>
-    <Route exact path="/" render={splash} />
-    <Route path="/login" component={SessionFormContainer} />
-    <Route path="/register" component={SessionFormContainer} />
+    <ProtectedRoute path="/channels" component={channels} />
+    <Switch>
+      <AuthRoute exact path="/" component={splash} />
+      <AuthRoute path="/login" component={SessionFormContainer} />
+      <AuthRoute path="/register" component={SessionFormContainer} />
+    </Switch>
   </div>
 );
 
