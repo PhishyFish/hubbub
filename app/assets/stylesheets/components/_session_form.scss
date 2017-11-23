@@ -1,0 +1,99 @@
+.session-form-container {
+  height: 100%;
+  background-image: url('http://www.creativeuncut.com/gallery-31/art/lozbotw-world-background.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+.session-form-outer {
+  display: flex;
+  border-radius: 3px;
+  overflow: hidden;
+  width: 630px;
+}
+
+.session-form-logo {
+  width: 230px;
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.8);
+}
+
+.session-form-logo h1, .session-form-logo h2 {
+  color: $purple;
+}
+
+.session-form {
+  width: 400px;
+  background: rgba(40, 43, 48, 0.8);
+  padding: 30px;
+}
+
+.session-form h1 {
+  margin-bottom: 30px;
+  font-size: 18px;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.session-form ul {
+  margin-bottom: 10px;
+  // list-style: disc inside;
+  font-size: 11px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: $red;
+}
+
+.session-form li {
+  margin-bottom: 5px;
+}
+
+.session-form label {
+  font-size: 11px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: $gray;
+}
+
+.session-form input {
+  width: 100%;
+  margin: 10px 0;
+  padding-bottom: 1px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.3 ease;
+  font-size: 16px;
+  line-height: 36px;
+}
+
+.session-form input:focus {
+  border-bottom: 2px solid #fff;
+  padding-bottom: 0;
+}
+
+.session-form button {
+  margin-top: 40px;
+  width: 100%;
+  box-sizing: border-box;
+  background: $purple;
+  color: #fff;
+}
+
+.session-form button:hover {
+  background: $darker-purple;
+}
+
+.session-form footer {
+  margin-top: 10px;
+  font-size: 12px;
+  line-height: 14px;
+  color: $gray;
+}
+
+.session-form footer a {
+  color: #fff;
+}
+
+.session-form footer a:hover {
+  border-bottom: 2px solid #fff;
+  padding-bottom: 5px;
+}

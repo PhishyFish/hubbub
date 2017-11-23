@@ -1,4 +1,4 @@
-html, body, main {
+html, body, main, main > div {
   width: 100%;
   min-width: 320px;
   height: 100%;
@@ -24,32 +24,13 @@ h1 {
   font-size: 36px;
 }
 
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  padding: 20px;
-  box-sizing: border-box;
-}
-
-header a {
-  opacity: 0.8;
-}
-
-header a:hover {
-  opacity: 1;
-}
-
-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 50px;
-}
-
-.container {
+.form-center {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
+}
+
+button {
+  text-align: center;
 }
