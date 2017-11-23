@@ -79,7 +79,7 @@ class SessionForm extends React.Component {
     const demoUsers = [
       'sheepie', 'pnut', 'Sneezy', 'ZigZag', 'Slush', 'Ampharos', 'Loki',
       'bluebelle', 'Boston', 'Kyoto', 'bacon', 'Rick', 'Morty', 'Summer',
-      'Snowball', 'santaslilhelper'
+      'Snowball', 'santaslilhelper', 'Marokv', 'Curie', 'breakfast', 'Sennacy'
     ];
 
     let randomNum = Math.floor(demoUsers.length * Math.random());
@@ -106,6 +106,7 @@ class SessionForm extends React.Component {
             {this.renderErrors()}
             <label htmlFor="session-form-username">Username</label>
             <input type="text"
+              autoFocus="true"
               autoComplete="off"
               spellCheck="false"
               id="session-form-username"

@@ -9,7 +9,7 @@
 demo_users = [
   "sheepie", "pnut", "Sneezy", "ZigZag", "Slush", "Ampharos", "Loki",
   "bluebelle", "Boston", "Kyoto", "bacon", "Rick", "Morty", "Summer",
-  "Snowball", "santaslilhelper"
+  "Snowball", "santaslilhelper", "Marokv", "Curie", "breakfast", "Sennacy"
 ]
 
 demo_users.each { |name| User.create(username: name, password: "password") }
