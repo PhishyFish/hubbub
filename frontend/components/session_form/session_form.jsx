@@ -11,12 +11,7 @@ class SessionForm extends React.Component {
       password: ''
     };
     this.handleSubmit = this.handleSubmit.bind(this);
-  }
-
-  componentWillReceiveProps(nextProps) {
-    if (nextProps.loggedIn) {
-      this.props.history.push('/');
-    }
+    this.demoLogin = this.demoLogin.bind(this);
   }
 
   update(field) {
@@ -67,7 +62,7 @@ class SessionForm extends React.Component {
       return (
         <footer>Need an account? &nbsp;
           <Link to="/register">Register</Link> or &nbsp;
-          <a href="#">
+          <a onClick={this.demoLogin}>
             log in as guest
           </a>
         </footer>
@@ -80,6 +75,25 @@ class SessionForm extends React.Component {
         </footer>
       );
     }
+  }
+
+  demoLogin() {
+    const demoUsers = [
+      'sheepie', 'pnut', 'Sneezy', 'ZigZag', 'Slush', 'Ampharos', 'Loki',
+      'bluebelle', 'Boston', 'Kyoto', 'bacon', 'Rick', 'Morty', 'Summer',
+      'Snowball', 'santaslilhelper'
+    ];
+
+    let randomNum = Math.floor(demoUsers.length * Math.random());
+
+    const demoUser = {
+      user: {
+        username: demoUsers[randomNum],
+        password: 'password'
+      }
+    };
+
+    return this.props.login(demoUser);
   }
 
   render() {

@@ -11,16 +11,15 @@
   margin: 20px;
 }
 
-button {
+.session-buttons button {
   background: #fff;
   color: $black;
   border-radius: 3px;
   height: 50px;
   padding: 0 30px;
-  transition: all 0.3s ease-in-out;
 }
 
-.button-green {
+.session-buttons .button-green {
   margin-left: 40px;
   background: $green;
   color: #fff;

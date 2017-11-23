@@ -4,14 +4,23 @@ header {
   box-sizing: border-box;
 }
 
-nav a {
+nav {
+  width: 200px;
+}
+
+nav a, .splash-button {
   opacity: 0.8;
 }
 
-nav a:hover {
+nav a:hover, .splash-button:hover {
   opacity: 1;
 }
 
-nav {
-  width: 50px;
+.splash-button {
+  padding: 5px 20px;
+  border: 2px solid #fff;
+  border-radius: 20px;
+  line-height: 24px;
+  font-size: 14px;
+  color: #fff;
 }
