@@ -17,11 +17,18 @@ const SessionFormBackground = () => {
     'https://i.lensdump.com/i/VjzKa.jpg'
   ];
 
-  let randomNum = Math.floor(bgImages.length * Math.random());
-  const bgImage = { backgroundImage: `url(${bgImages[randomNum]})` };
+  const bgImageUrl = bgImages[Math.floor(bgImages.length * Math.random())];
+  let bgImage = new Image();
+  bgImage.src = bgImageUrl;
+
+  bgImage.onload = () => {
+    let formBg = document.getElementsByClassName('session-form-background')[0];
+    formBg.classList.add('fade');
+    formBg.style.backgroundImage = `url(${bgImageUrl})`;
+  };
 
   return (
-    <div className="session-form-background" style={bgImage}></div>
+    <div className="session-form-background"></div>
   );
 };
 

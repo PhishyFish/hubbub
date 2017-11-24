@@ -4,7 +4,7 @@ html, body, main, main > div {
   height: 100%;
 }
 
-.app-container, .main-container, .servers, .channels {
+.splash-container, .splash-inner, .app-container, .main-container, .servers, .channels {
   height: 100%;
 }
 
@@ -12,6 +12,7 @@ body {
   font-family: 'Source Sans Pro', $sans-serif;
   color: #fff;
   background: $black;
+  overflow: hidden;
 }
 
 html, body, button, input {

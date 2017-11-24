@@ -7,7 +7,20 @@
   height: 100%;
   background-size: cover;
   background-position: center;
-  animation: bg-fade 5s;
+  animation: color-fade 5s;
+}
+
+.fade {
+  animation: bg-fade 4s;
+}
+
+@keyframes color-fade {
+  from {
+    background-color: $black;
+  }
+  to {
+    background-color: $server-gray;
+  }
 }
 
 @keyframes bg-fade {

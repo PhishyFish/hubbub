@@ -4,8 +4,13 @@ header {
   box-sizing: border-box;
 }
 
+header h1 {
+  transition: all 0.3s;
+}
+
 nav {
   width: 200px;
+  transition: all 0.3s;
 }
 
 nav a, .splash-button {
@@ -23,4 +28,19 @@ nav a:hover, .splash-button:hover {
   line-height: 24px;
   font-size: 14px;
   color: #fff;
+  transition: all 0.3s;
+}
+
+@media (max-width: 649px) {
+  header h1 {
+    font-size: 24px;
+  }
+
+  nav {
+    width: 165px;
+  }
+
+  .splash-button {
+    padding: 3px 10px;
+  }
 }

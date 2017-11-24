@@ -28,7 +28,7 @@ class Splash extends React.Component {
 
   render() {
     return(
-      <div className="flex-column-center">
+      <div className="splash-container">
         <header className="flex-space-between">
           <h1>Hubbub</h1>
           <nav className="flex-space-between">
@@ -47,16 +47,19 @@ class Splash extends React.Component {
           </nav>
         </header>
 
-        <h1>Join the commotion.</h1>
-        <p>Real-time live chat. No frills. No hassle.</p>
-        <div className="session-buttons">
-          <Link to="/login">
-            <button>Log In</button>
-          </Link>
-          <Link to="/register">
-            <button className="button-green">Register</button>
-          </Link>
+        <div className="splash-blurb flex-column-center">
+          <h1>Join the commotion.</h1>
+          <p>Real-time live chat. No frills. No hassle.</p>
+          <div className="session-buttons">
+            <Link to="/login">
+              <button>Log In</button>
+            </Link>
+            <Link to="/register">
+              <button className="button-green">Register</button>
+            </Link>
+          </div>
         </div>
+        <div className="tiled-bg"></div>
       </div>
     );
   }
