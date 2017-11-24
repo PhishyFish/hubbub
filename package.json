@@ -12,9 +12,11 @@
     "react-redux": "^5.0.6",
     "react-router-dom": "^4.2.2",
     "redux": "^3.7.2",
-    "redux-logger": "^3.0.6",
     "redux-thunk": "^2.2.0",
     "webpack": "^3.8.1"
+  },
+  "devDependencies": {
+    "redux-logger": "^3.0.6"
   },
   "description": "Hubbub is a live chat web application based on [Discord](https://www.discordapp.com/), offering multi-server and multi-channel support, as well as multi-person direct messages.",
   "version": "1.0.0",
@@ -35,8 +37,8 @@
     "type": "git",
     "url": "git+https://github.com/PhishyFish/hubbub.git"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": ["live chat", "Discord"],
+  "author": "Vickie Chen",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/PhishyFish/hubbub/issues"
