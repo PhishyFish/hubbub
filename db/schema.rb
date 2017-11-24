@@ -10,10 +10,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171122015803) do
+ActiveRecord::Schema.define(version: 20171124230947) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "direct_messages", force: :cascade do |t|
+    t.string "name", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["name"], name: "index_direct_messages_on_name"
+  end
+
+  create_table "messages", force: :cascade do |t|
+    t.text "body", null: false
+    t.integer "author_id", null: false
+    t.string "messageable_type"
+    t.bigint "messageable_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["author_id"], name: "index_messages_on_author_id"
+    t.index ["messageable_type", "messageable_id"], name: "index_messages_on_messageable_type_and_messageable_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "username", null: false

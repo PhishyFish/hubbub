@@ -1,0 +1,2 @@
+class DirectMessage < ApplicationRecord
+end
