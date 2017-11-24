@@ -10,9 +10,7 @@ class User extends React.Component {
     return this.props.logout();
   }
 
-  // <img className="icon-small" src={`${this.props.currentUser.img_url}`} />
   render() {
-    console.log("props", this.props);
     return (
       <div className="user-status">
         <div className="user-info-box">

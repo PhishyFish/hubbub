@@ -17,6 +17,10 @@
   width: 100%;
 }
 
+.icon span {
+  font-size: 18px;
+}
+
 .servers .active > .icon {
   border-radius: 15px;
   background: $purple;

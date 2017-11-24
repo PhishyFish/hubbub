@@ -26,7 +26,6 @@ class SessionForm extends React.Component {
     let randomNum = Math.floor(avatars.length * Math.random());
 
     this.state['img_url'] = avatars[randomNum];
-    console.log(this.state);
   }
 
   update(field) {
