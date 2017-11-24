@@ -5,6 +5,10 @@
   background: $status-gray;
 }
 
+.user-info-box {
+  display: flex;
+}
+
 .button-logout {
   display: flex;
   justify-content: center;
