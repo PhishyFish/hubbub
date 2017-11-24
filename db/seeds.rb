@@ -9,7 +9,17 @@
 demo_users = [
   "sheepie", "pnut", "Sneezy", "ZigZag", "Slush", "Ampharos", "Loki",
   "bluebelle", "Boston", "Kyoto", "bacon", "Rick", "Morty", "Summer",
-  "Snowball", "santaslilhelper", "Marokv", "Curie", "breakfast", "Sennacy"
+  "Snowball", "santaslilhelper", "Markov", "Curie", "breakfast", "Sennacy"
 ]
 
-demo_users.each { |name| User.create(username: name, password: "password") }
+avatars = [
+  'https://i.lensdump.com/i/VjY21.png',
+  'https://i.lensdump.com/i/VjLYH.png',
+  'https://i.lensdump.com/i/Vjvqx.png',
+  'https://i.lensdump.com/i/Vjn0k.png',
+  'https://i.lensdump.com/i/VjSfe.png'
+]
+
+demo_users.each do |name|
+  User.create(username: name, password: "password", img_url: avatars.sample)
+end

@@ -4,12 +4,29 @@ import { Link, withRouter } from 'react-router-dom';
 class SessionForm extends React.Component {
   constructor(props) {
     super(props);
+
     this.state = {
       username: '',
       password: ''
     };
+
     this.handleSubmit = this.handleSubmit.bind(this);
     this.demoLogin = this.demoLogin.bind(this);
+  }
+
+  componentDidMount() {
+    const avatars = [
+      'https://i.lensdump.com/i/VjY21.png',
+      'https://i.lensdump.com/i/VjLYH.png',
+      'https://i.lensdump.com/i/Vjvqx.png',
+      'https://i.lensdump.com/i/Vjn0k.png',
+      'https://i.lensdump.com/i/VjSfe.png'
+    ];
+
+    let randomNum = Math.floor(avatars.length * Math.random());
+
+    this.state['img_url'] = avatars[randomNum];
+    console.log(this.state);
   }
 
   update(field) {
@@ -79,7 +96,7 @@ class SessionForm extends React.Component {
     const demoUsers = [
       'sheepie', 'pnut', 'Sneezy', 'ZigZag', 'Slush', 'Ampharos', 'Loki',
       'bluebelle', 'Boston', 'Kyoto', 'bacon', 'Rick', 'Morty', 'Summer',
-      'Snowball', 'santaslilhelper', 'Marokv', 'Curie', 'breakfast', 'Sennacy'
+      'Snowball', 'santaslilhelper', 'Markov', 'Curie', 'breakfast', 'Sennacy'
     ];
 
     let randomNum = Math.floor(demoUsers.length * Math.random());
