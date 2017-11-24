@@ -3,7 +3,9 @@ import { withRouter } from 'react-router-dom';
 
 class ChannelsList extends React.Component {
   render() {
-    
+    return (
+      <div className="channels-list"></div>
+    );
   }
 }
 

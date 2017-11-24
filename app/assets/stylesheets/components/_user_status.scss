@@ -1,0 +1,58 @@
+.user-status {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  background: $status-gray;
+}
+
+.button-logout {
+  display: flex;
+  justify-content: center;
+  padding: 5px 12px 5px 0;
+  width: 70px;
+  border: 2px $red solid;
+  border-radius: 3px;
+  font-size: 11px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: $red;
+  background: transparent;
+  overflow: hidden;
+  opacity: 0.9;
+}
+
+.button-logout:hover {
+  padding-left: 12px;
+  opacity: 1;
+  background: $red;
+  color: #fff;
+}
+
+.button-logout i {
+  margin-right: 5px;
+  opacity: 0;
+  position: relative;
+  left: -30px;
+  transition: all 0.2s;
+}
+
+.button-logout:hover i {
+  opacity: 1;
+  left: 0;
+}
+
+.username {
+  font-size: 14px;
+  display: block;
+  max-width: 85px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.user-id {
+  display: block;
+  font-size: 10px;
+  opacity: 0.4;
+  padding-top: 1px;
+}

@@ -1,0 +1,68 @@
+.servers-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 10px;
+  width: 70px;
+  background: $server-gray;
+  overflow: hidden;
+}
+
+.icon .friends i {
+  width: 100%;
+}
+
+.servers .active > .icon {
+  border-radius: 15px;
+  background: $purple;
+}
+
+.servers .active > .server::before {
+  content: '';
+  display: block;
+  position: absolute;
+  left: -15px;
+  height: 40px;
+  width: 20px;
+  background: $inactive-text;
+  border-radius: 10px;
+}
+
+.servers .icon {
+  transition: all 0.3s ease-in-out;
+}
+
+.servers .icon:hover {
+  border-radius: 15px;
+  background: $purple;
+  animation: icon-bounce 0.6s ease-in-out;
+}
+
+.servers .active > .icon:hover {
+  animation: none;
+}
+
+@keyframes icon-bounce {
+  0% {
+    border-radius: 25px;
+  }
+  33% {
+    border-radius: 10px;
+  }
+  66% {
+    border-radius: 17px;
+  }
+  100% {
+    border-radius: 15px;
+  }
+}
+
+.servers hr {
+  border-width: 2px;
+  width: 30px;
+}
+
+.servers span {
+  cursor: pointer;
+}

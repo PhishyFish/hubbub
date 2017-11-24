@@ -7,10 +7,10 @@
   height: 100%;
   background-size: cover;
   background-position: center;
-  animation: bgFade 5s;
+  animation: bg-fade 5s;
 }
 
-@keyframes bgFade {
+@keyframes bg-fade {
   from {
     opacity: 0.2;
   }
