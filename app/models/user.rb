@@ -5,6 +5,10 @@ class User < ApplicationRecord
   validates :username, :session_token, uniqueness: true
   validates :password, length: { minimum: 6 }, allow_nil: true
 
+  has_many :messages, foreign_key: :author_id
+  has_many :direct_message_members, foreign_key: :member_id
+  has_many :direct_messages, through: :direct_message_members, source: :direct_message
+
   after_initialize :ensure_token
 
   # TODO: associations
