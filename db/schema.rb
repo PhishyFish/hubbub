@@ -10,10 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171124230947) do
+ActiveRecord::Schema.define(version: 20171124234845) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "direct_message_members", force: :cascade do |t|
+    t.integer "direct_message_id", null: false
+    t.integer "member_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["direct_message_id", "member_id"], name: "index_direct_message_members_on_direct_message_id_and_member_id", unique: true
+  end
 
   create_table "direct_messages", force: :cascade do |t|
     t.string "name", null: false
@@ -39,7 +47,7 @@ ActiveRecord::Schema.define(version: 20171124230947) do
     t.string "session_token", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "img_url", default: "https://discordapp.com/assets/0e291f67c9274a1abdddeb3fd919cbaa.png", null: false
+    t.string "img_url", default: "https://i.lensdump.com/i/VjLYH.png", null: false
     t.index ["session_token"], name: "index_users_on_session_token", unique: true
     t.index ["username"], name: "index_users_on_username", unique: true
   end
