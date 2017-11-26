@@ -74,6 +74,7 @@ hr {
 
 .scroller {
   overflow-y: scroll;
+  scroll-behavior: smooth;
 }
 
 .scroller-wrap {
