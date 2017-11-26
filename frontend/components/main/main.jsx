@@ -12,9 +12,9 @@ class Main extends React.Component {
   render() {
     return (
       <div className="main-container">
-        <div className="servers-container">
+        <div className="servers-container flex-column">
           <div className="scroller-wrap">
-            <section className="servers">
+            <section className="servers scroller">
               <NavLink to="/channels/@me">
                 <div className="icon friends">
                   <i className="fa fa-users fa-lg"></i>

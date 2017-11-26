@@ -71,3 +71,12 @@ hr {
   width: 90%;
   border-color: $inactive-text;
 }
+
+.scroller {
+  overflow-y: scroll;
+}
+
+.scroller-wrap {
+  height: 100%;
+  overflow: hidden;
+}
