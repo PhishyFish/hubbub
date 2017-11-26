@@ -30,7 +30,10 @@ class Splash extends React.Component {
     return(
       <div className="splash-container">
         <header className="flex-space-between">
-          <h1>Hubbub</h1>
+          <div class="splash-logo flex-space-between">
+            <i className="fa fa-comments-o fa-2x" aria-hidden="true"></i>
+            <h1>Hubbub</h1>
+          </div>
           <nav className="flex-space-between">
             <a href="https://www.github.com/phishyfish"
               aria-label="Vickie's GitHub">

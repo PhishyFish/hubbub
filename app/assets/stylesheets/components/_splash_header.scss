@@ -1,11 +1,24 @@
+.splash-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 header {
-  min-width: 90%;
-  padding: 20px;
+  width: 100%;
+  min-width: 400px;
+  max-width: 1600px;
+  padding: 20px 30px;
   box-sizing: border-box;
+}
+
+.splash-logo i {
+  margin-right: 10px;
 }
 
 header h1 {
   transition: all 0.3s;
+  margin-right: 20px;
 }
 
 nav {

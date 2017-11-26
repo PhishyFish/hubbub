@@ -12,7 +12,7 @@ class User extends React.Component {
 
   render() {
     return (
-      <div className="user-status">
+      <div className="user-status flex-space-between">
         <div className="user-info-box">
           <img className="icon-small" src={this.props.currentUser.img_url} />
           <div className="user-info" >
