@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavLink, withRouter, Switch } from 'react-router-dom';
+import { Link, NavLink, withRouter, Switch } from 'react-router-dom';
 
 import { ProtectedRoute } from '../../util/route_util';
 import Channels from '../channels/channels';
@@ -96,6 +96,11 @@ class Main extends React.Component {
                     <span>O</span>
                   </div>
                 </NavLink>
+                <Link to="/">
+                  <button className="icon add-server">
+                    <span>+</span>
+                  </button>
+                </Link>
             </section>
           </div>
         </div>
