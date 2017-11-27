@@ -4,7 +4,8 @@ html, body, main, main > div {
   height: 100%;
 }
 
-.splash-container, .splash-inner, .app-container, .main-container, .servers, .channels {
+.splash-container, .splash-inner, .app-container, .main-container,
+.main-content, .servers, .channels, .messages-container {
   height: 100%;
 }
 
@@ -28,6 +29,15 @@ h1, h2, h3, h4, h5, h6 {
 
 h1 {
   font-size: 36px;
+}
+
+.flex-row {
+  display: flex;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
 }
 
 .flex-space-between {
@@ -56,7 +66,6 @@ button {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: $channel-gray;
 }
 
 .icon-small {
@@ -78,6 +87,6 @@ hr {
 }
 
 .scroller-wrap {
-  height: 100%;
+  flex: 1;
   overflow: hidden;
 }

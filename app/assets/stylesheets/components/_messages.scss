@@ -1,0 +1,58 @@
+.messages-container, .messages-header, .content, .messages,
+.message-input textarea {
+  width: 100%;
+}
+
+.content {
+  flex: 1 1 auto;
+}
+
+.messages-header {
+  z-index: 1;
+  padding: 0 15px;
+  background: $message-header;
+  box-shadow: 0 1px 0 rgba(0,0,0,.2), 0 2px 0 rgba(0,0,0,.06);
+}
+
+.messages, .message-group, .message-input, .message-input textarea {
+  flex: 1;
+  min-width: 1px;
+}
+
+.messages {
+  background: $message-gray;
+  overflow: hidden;
+}
+
+.message-group {
+  border-bottom: 1px solid $message-border;
+  margin: 10px 20px;
+  padding: 20px 0;
+  color: $form-text;
+}
+
+form {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  color: $form-text;
+}
+
+.message-input {
+  display: flex;
+  align-items: center;
+  flex: 1 1 auto;
+  min-height: 40px;
+  max-height: 145px;
+  background: $form-gray;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.message-input textarea {
+  padding: 10px;
+  box-sizing: border-box;
+  font-size: 14px;
+  letter-spacing: -0.5px;
+  resize: none;
+}

@@ -1,0 +1,21 @@
+.members-container {
+  flex: 0 0 auto;
+  width: 240px;
+  background: $channel-gray;
+}
+
+.members {
+  overflow: hidden;
+}
+
+.members h2 {
+  margin-top: 25px;
+  margin-bottom: 5px;
+  font-size: 14px;
+  color: $member-header;
+  text-transform: uppercase;
+}
+
+.member, .members h2 {
+  padding: 5px 30px;
+}

@@ -1,7 +1,27 @@
-.channels {
-  display: flex;
-  flex-direction: column;
+.channels-container {
+  flex: 0 0 auto;
   width: 250px;
   background: $channel-gray;
-  justify-content: flex-end;
+}
+
+.channels-header {
+  padding: 0 15px;
+  background: $channel-header;
+  box-shadow: 0 1px 0 rgba(0,0,0,.2), 0 2px 0 rgba(0,0,0,.06);
+}
+
+.channels header {
+  margin-top: 20px;
+  margin-bottom: 5px;
+  padding: 10px 20px;
+  font-size: 14px;
+  color: $member-header;
+  text-transform: uppercase;
+  overflow: none;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.channels {
+  flex: 1 1 auto;
 }
