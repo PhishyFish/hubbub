@@ -48,11 +48,11 @@
 .add-server {
   margin-bottom: 30px;
   border: 1px dashed $add-gray;
-  background: transparent;
   color: $add-gray;
 }
 
 button.icon.add-server {
+  background: transparent;
   transition: all 0.2s;
 }
 
