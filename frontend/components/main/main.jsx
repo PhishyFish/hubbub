@@ -121,7 +121,7 @@ class Main extends React.Component {
                 </div>
                 <form>
                   <div className="message-input">
-                    <textarea rows="1" placeholder="Message (channel/group/username)">
+                    <textarea className="chat" rows="1" placeholder="Message (channel/group/username)">
 
                     </textarea>
                   </div>

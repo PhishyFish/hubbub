@@ -56,3 +56,9 @@
   letter-spacing: -0.5px;
   resize: none;
 }
+
+textarea.chat::placeholder {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
