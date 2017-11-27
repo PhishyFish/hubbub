@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, NavLink, withRouter, Switch } from 'react-router-dom';
+import { withRouter, Switch, Link, NavLink } from 'react-router-dom';
 
 import { ProtectedRoute } from '../../util/route_util';
 import Channels from '../channels/channels';
