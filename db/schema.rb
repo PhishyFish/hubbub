@@ -10,10 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171124234845) do
+ActiveRecord::Schema.define(version: 20171127214833) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "channels", force: :cascade do |t|
+    t.string "name", null: false
+    t.integer "server_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["name"], name: "index_channels_on_name"
+    t.index ["server_id"], name: "index_channels_on_server_id"
+  end
 
   create_table "direct_message_members", force: :cascade do |t|
     t.integer "direct_message_id", null: false
@@ -39,6 +48,24 @@ ActiveRecord::Schema.define(version: 20171124234845) do
     t.datetime "updated_at", null: false
     t.index ["author_id"], name: "index_messages_on_author_id"
     t.index ["messageable_type", "messageable_id"], name: "index_messages_on_messageable_type_and_messageable_id"
+  end
+
+  create_table "server_members", force: :cascade do |t|
+    t.integer "server_id", null: false
+    t.integer "member_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["server_id", "member_id"], name: "index_server_members_on_server_id_and_member_id", unique: true
+  end
+
+  create_table "servers", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "img_url"
+    t.integer "owner_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["name"], name: "index_servers_on_name"
+    t.index ["owner_id"], name: "index_servers_on_owner_id"
   end
 
   create_table "users", force: :cascade do |t|

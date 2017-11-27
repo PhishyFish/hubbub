@@ -8,6 +8,8 @@ class User < ApplicationRecord
   has_many :messages, foreign_key: :author_id
   has_many :direct_message_members, foreign_key: :member_id
   has_many :direct_messages, through: :direct_message_members, source: :direct_message
+  has_many :server_members, foreign_key: :member_id
+  has_many :servers, through: :server_members, source: :server
 
   after_initialize :ensure_token
 
