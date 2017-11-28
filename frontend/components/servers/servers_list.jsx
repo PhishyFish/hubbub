@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavLink, withRouter } from 'react-router-dom';
+import { Link, NavLink, withRouter } from 'react-router-dom';
 
 import ServersListItem from './servers_list_item';
 
@@ -29,7 +29,7 @@ class ServersList extends React.Component {
               <ServersListItem server={server} key={server.id} />
             ))}
 
-            <Link to="/">
+            <Link to="/channels/@me">
               <button className="icon add-server">
                 <span>+</span>
               </button>
