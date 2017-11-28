@@ -18,7 +18,6 @@
 }
 
 .channels header {
-  margin-top: 20px;
   margin-bottom: 5px;
   padding: 10px 20px;
   font-size: 14px;
@@ -37,6 +36,8 @@
 .channel-list {
   width: 100%;
   height: 100%;
+  padding: 20px 0;
+  box-sizing: border-box;
 }
 
 .channel-item {
