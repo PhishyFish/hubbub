@@ -16,30 +16,38 @@ class Api::DirectMessagesController < ApplicationController
     end
   end
 
-  # def create
-  #   @direct_message = DirectMessage.create(dm_params)
-  #
-  #   # if params[:direct_message][:members].includes?(current_user)
-  #   if @direct_message.save
-  #     params[:direct_message][:members].each do |member|
-  #       DirectMessageMembers.create(
-  #         member_id: member.id,
-  #         direct_message_id: @direct_message.id
-  #       )
-  #     end
-  #     render :show
-  #   else
-  #     render json: @direct_message.errors.full_messages, status: 400
-  #   end
-  # end
-  #
-  # def update
-  #   @direct_message = DirectMessage.find(params[:id])
-  #   @direct_message.update_attributes(dm_params)
-  #   render :show
-  # end
+  def create
+    @direct_message = DirectMessage.new(dm_params)
+
+    # if params[:direct_message][:members].includes?(current_user)
+    if @direct_message.save
+      if params[:directMessage][:members]
+        params[:directMessage][:members].each do |member|
+          DirectMessageMember.create(
+            member_id: member,
+            direct_message_id: @direct_message.id
+          )
+        end
+      end
+
+      DirectMessageMember.create(
+        member_id: current_user.id,
+        direct_message_id: @direct_message.id
+      )
+
+      render :show
+    else
+      render json: @direct_message.errors.full_messages, status: 400
+    end
+  end
+
+  def update
+    @direct_message = DirectMessage.find(params[:id])
+    @direct_message.update_attributes(dm_params)
+    render :show
+  end
 
   def dm_params
-    params.require(:direct_message).permit(:name, :members)
+    params.require(:directMessage).permit(:name)
   end
 end

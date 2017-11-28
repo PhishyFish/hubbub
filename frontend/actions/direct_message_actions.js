@@ -24,3 +24,15 @@ export const fetchDirectMessage = id => dispatch => (
     dispatch(receiveDirectMessage(directMessage))
   ))
 );
+
+export const createDirectMessage = dm => dispatch => (
+  DMUtil.createDirectMessage(dm).then(directMessage => (
+    dispatch(receiveDirectMessage(directMessage))
+  ))
+);
+
+export const updateDirectMessage = dm => dispatch => (
+  DMUtil.updateDirectMessage(dm).then(directMessage => (
+    dispatch(receiveDirectMessage(directMessage))
+  ))
+);

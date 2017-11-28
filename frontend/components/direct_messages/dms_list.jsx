@@ -18,10 +18,14 @@ class DMsList extends React.Component {
 
   render() {
     return(
-      <div className="channel-list flex-column scroller">
-        <header>Direct Messages</header>
-        {this.props.directMessages.map(dm => <DMsListItem dm={dm} key={dm.id}/>)}
-      </div>
+      <div className="scroller-wrap">
+        <div className="channel-list flex-column scroller">
+          <header>Direct Messages</header>
+          {this.props.directMessages.map(dm => (
+            <DMsListItem dm={dm} key={dm.id} />
+          ))}
+        </div>
+    </div>
     );
   }
 }
