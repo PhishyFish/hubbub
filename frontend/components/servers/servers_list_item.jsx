@@ -8,7 +8,7 @@ const ServersListItem = ({ server }) => {
       <img src={server.img} />
     );
   } else {
-    let abbr = server.name.split(" ", 3).map(word => word[0].toUpperCase());
+    let abbr = server.name.split(" ", 3).map(word => word[0]);
     abbr = abbr.reduce((acc, el) => acc + el);
     icon = () => (
       <span>{abbr}</span>
