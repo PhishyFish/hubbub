@@ -1,7 +1,7 @@
 import React from 'react';
 import { NavLink, withRouter } from 'react-router-dom';
 
-import ServersListItem from './dms_list_item';
+import ServersListItem from './servers_list_item';
 
 class ServersList extends React.Component {
   constructor(props) {
