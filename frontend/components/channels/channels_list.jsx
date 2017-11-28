@@ -18,6 +18,7 @@ class ChannelsList extends React.Component {
         <div className="channel-list flex-column scroller">
           {this.props.channels.map(channel => (
             <ChannelsListItem channel={channel}
+              serverId={this.props.match.params.serverId}
               key={channel.id} />
           ))}
         </div>
