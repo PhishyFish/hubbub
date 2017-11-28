@@ -4,6 +4,7 @@ import ReactDOM from 'react-dom';
 import configureStore from './store/store';
 import Root from './components/root';
 import { fetchDirectMessage, fetchDirectMessages } from './util/direct_message_api_util';
+import { createDirectMessage } from './actions/direct_message_actions';
 
 document.addEventListener('DOMContentLoaded', () => {
   let store;
@@ -21,6 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
   window.dispatch = store.dispatch;
   window.fetchDirectMessage = fetchDirectMessage;
   window.fetchDirectMessages = fetchDirectMessages;
+  window.createDirectMessage = createDirectMessage;
 
   const root = document.getElementById('root');
   ReactDOM.render(<Root store={store} />, root);

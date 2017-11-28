@@ -21,87 +21,90 @@ class Main extends React.Component {
                   <i className="fa fa-users fa-lg"></i>
                 </div>
               </NavLink>
-                <hr />
-                <NavLink to="/channels/serverA">
+
+              <hr />
+
+              <NavLink to="/channels/serverA">
                 <div className="icon server">
-                    <span>A</span>
-                  </div>
-                </NavLink>
-                <NavLink to="/channels/serverB">
-                  <div className="icon server">
-                    <span>B</span>
-                  </div>
-                </NavLink>
-                <NavLink to="/channels/serverC">
-                  <div className="icon server">
-                    <span>C</span>
-                  </div>
-                </NavLink>
-                <NavLink to="/channels/serverD">
-                  <div className="icon server">
-                    <span>D</span>
-                  </div>
-                </NavLink>
-                <NavLink to="/channels/serverE">
-                  <div className="icon server">
-                    <span>E</span>
-                  </div>
-                </NavLink>
-                <NavLink to="/channels/serverF">
-                  <div className="icon server">
-                    <span>F</span>
-                  </div>
-                </NavLink>
-                <NavLink to="/channels/serverG">
-                  <div className="icon server">
-                    <span>G</span>
-                  </div>
-                </NavLink>
-                <NavLink to="/channels/serverH">
-                  <div className="icon server">
-                    <span>H</span>
-                  </div>
-                </NavLink>
-                <NavLink to="/channels/serverI">
-                  <div className="icon server">
-                    <span>I</span>
-                  </div>
-                </NavLink>
-                <NavLink to="/channels/serverJ">
-                  <div className="icon server">
-                    <span>J</span>
-                  </div>
-                </NavLink>
-                <NavLink to="/channels/serverK">
-                  <div className="icon server">
-                    <span>K</span>
-                  </div>
-                </NavLink>
-                <NavLink to="/channels/serverL">
-                  <div className="icon server">
-                    <span>L</span>
-                  </div>
-                </NavLink>
-                <NavLink to="/channels/serverM">
-                  <div className="icon server">
-                    <span>M</span>
-                  </div>
-                </NavLink>
-                <NavLink to="/channels/serverN">
-                  <div className="icon server">
-                    <span>N</span>
-                  </div>
-                </NavLink>
-                <NavLink to="/channels/serverO">
-                  <div className="icon server">
-                    <span>O</span>
-                  </div>
-                </NavLink>
-                <Link to="/">
-                  <button className="icon add-server">
-                    <span>+</span>
-                  </button>
-                </Link>
+                  <span>A</span>
+                </div>
+              </NavLink>
+              <NavLink to="/channels/serverB">
+                <div className="icon server">
+                  <span>B</span>
+                </div>
+              </NavLink>
+              <NavLink to="/channels/serverC">
+                <div className="icon server">
+                  <span>C</span>
+                </div>
+              </NavLink>
+              <NavLink to="/channels/serverD">
+                <div className="icon server">
+                  <span>D</span>
+                </div>
+              </NavLink>
+              <NavLink to="/channels/serverE">
+                <div className="icon server">
+                  <span>E</span>
+                </div>
+              </NavLink>
+              <NavLink to="/channels/serverF">
+                <div className="icon server">
+                  <span>F</span>
+                </div>
+              </NavLink>
+              <NavLink to="/channels/serverG">
+                <div className="icon server">
+                  <span>G</span>
+                </div>
+              </NavLink>
+              <NavLink to="/channels/serverH">
+                <div className="icon server">
+                  <span>H</span>
+                </div>
+              </NavLink>
+              <NavLink to="/channels/serverI">
+                <div className="icon server">
+                  <span>I</span>
+                </div>
+              </NavLink>
+              <NavLink to="/channels/serverJ">
+                <div className="icon server">
+                  <span>J</span>
+                </div>
+              </NavLink>
+              <NavLink to="/channels/serverK">
+                <div className="icon server">
+                  <span>K</span>
+                </div>
+              </NavLink>
+              <NavLink to="/channels/serverL">
+                <div className="icon server">
+                  <span>L</span>
+                </div>
+              </NavLink>
+              <NavLink to="/channels/serverM">
+                <div className="icon server">
+                  <span>M</span>
+                </div>
+              </NavLink>
+              <NavLink to="/channels/serverN">
+                <div className="icon server">
+                  <span>N</span>
+                </div>
+              </NavLink>
+              <NavLink to="/channels/serverO">
+                <div className="icon server">
+                  <span>O</span>
+                </div>
+              </NavLink>
+
+              <Link to="/">
+                <button className="icon add-server">
+                  <span>+</span>
+                </button>
+              </Link>
             </section>
           </div>
         </div>
