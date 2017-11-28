@@ -3,6 +3,7 @@ import { withRouter, Switch, Link, NavLink } from 'react-router-dom';
 
 import { ProtectedRoute } from '../../util/route_util';
 import Channels from '../channels/channels';
+import DMsListContainer from '../direct_messages/dms_list_container';
 
 class Main extends React.Component {
   constructor(props) {
