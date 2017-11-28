@@ -7,13 +7,8 @@ import SessionFormBackground from './session_form/session_form_background';
 import SplashContainer from './splash/splash_container';
 import MainContainer from './main/main_container';
 
-const channels = () => (
-  <h1>Channels</h1>
-);
-
 const App = () => (
   <div className="app-container">
-    <ProtectedRoute path="/channels" component={MainContainer} />
     <AuthRoute path="/login" component={SessionFormBackground} />
     <AuthRoute path="/register" component={SessionFormBackground} />
 
@@ -21,6 +16,7 @@ const App = () => (
       <AuthRoute exact path="/" component={SplashContainer} />
       <AuthRoute path="/login" component={SessionFormContainer} />
       <AuthRoute path="/register" component={SessionFormContainer} />
+      <ProtectedRoute path="/channels" component={MainContainer} />
     </Switch>
   </div>
 );
