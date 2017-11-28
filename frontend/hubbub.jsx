@@ -5,6 +5,8 @@ import configureStore from './store/store';
 import Root from './components/root';
 import { fetchDirectMessage, fetchDirectMessages } from './util/direct_message_api_util';
 import { createDirectMessage } from './actions/direct_message_actions';
+import { createServer } from './actions/server_actions';
+import { createChannel } from './actions/channel_actions';
 
 document.addEventListener('DOMContentLoaded', () => {
   let store;
@@ -23,6 +25,8 @@ document.addEventListener('DOMContentLoaded', () => {
   window.fetchDirectMessage = fetchDirectMessage;
   window.fetchDirectMessages = fetchDirectMessages;
   window.createDirectMessage = createDirectMessage;
+  window.createServer = createServer;
+  window.createChannel = createChannel;
 
   const root = document.getElementById('root');
   ReactDOM.render(<Root store={store} />, root);

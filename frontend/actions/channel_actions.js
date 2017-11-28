@@ -13,8 +13,8 @@ export const receiveChannel = channel => ({
   channel
 });
 
-export const fetchChannels = () => dispatch => (
-  ChannelUtil.fetchChannels().then(channels => (
+export const fetchChannels = serverId => dispatch => (
+  ChannelUtil.fetchChannels(serverId).then(channels => (
     dispatch(receiveChannels(channels))
   ))
 );

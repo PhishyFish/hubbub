@@ -9,7 +9,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  fetchChannels: () => dispatch(fetchChannels()),
+  fetchChannels: serverId => dispatch(fetchChannels(serverId)),
 });
 
 export default withRouter(

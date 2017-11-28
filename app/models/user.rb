@@ -1,3 +1,16 @@
+# == Schema Information
+#
+# Table name: users
+#
+#  id              :integer          not null, primary key
+#  username        :string           not null
+#  password_digest :string           not null
+#  session_token   :string           not null
+#  created_at      :datetime         not null
+#  updated_at      :datetime         not null
+#  img_url         :string           default("https://i.lensdump.com/i/VjLYH.png"), not null
+#
+
 class User < ApplicationRecord
   attr_reader :password
 

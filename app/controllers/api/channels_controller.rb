@@ -2,14 +2,14 @@ class Api::ChannelsController < ApplicationController
   before_action :require_login
 
   def index
-    @channels = @current_server.channels
+    @channels = current_server.channels
     render :index
   end
 
   def show
     @channel = Channel.find(params[:id])
 
-    if @current_server.channels.include?(@channel)
+    if current_server.channels.include?(@channel)
       render :show
     else
       render json: ["Channel does not belong to this server"], status: 403
@@ -18,7 +18,7 @@ class Api::ChannelsController < ApplicationController
 
   def create
     @channel = Channel.new(channel_params)
-    @channel.server_id = @current_server.id
+    @channel.server_id = current_server.id
 
     if @channel.save
       render :show

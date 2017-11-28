@@ -9,15 +9,16 @@ class ChannelsList extends React.Component {
   }
 
   componentDidMount() {
-    this.props.fetchChannels();
+    this.props.fetchChannels(this.props.match.params.serverId);
   }
 
   render() {
     return(
       <div className="scroller-wrap">
         <div className="channel-list flex-column scroller">
-          {this.props.directMessages.map(channel => (
-            <ChannelsListItem channel={channel} key={channel.id} />
+          {this.props.channels.map(channel => (
+            <ChannelsListItem channel={channel}
+              key={channel.id} />
           ))}
         </div>
     </div>

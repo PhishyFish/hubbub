@@ -9,7 +9,7 @@ class Api::ServersController < ApplicationController
   def show
     @server = Server.find(params[:id])
 
-    if server.members.include?(current_user)
+    if @server.members.include?(current_user)
       render :show
     else
       render json: ["You are not a member of this server"], status: 403
