@@ -3,12 +3,12 @@ class Api::MessagesController < ApplicationController
 
   def create
     @message = Message.new(message_params)
-    @message.messageable_id = params[:channelId]
+    @message.author_id = current_user.id
 
     if params[:serverId] = "@me"
-      @message.messageable_type = "DirectMessage"
+      @message.messageable = DirectMessage.find(params[:channelId])
     else
-      @message.messageable_type = "Channel"
+      @message.messageable = Channel.find(params[:channelId])
     end
 
     if @message.save
@@ -20,16 +20,12 @@ class Api::MessagesController < ApplicationController
 
   def update
     @message = Message.find(params[:id])
-
-
   end
 
   def destroy
   end
 
   def message_params
-    params.require(:message).permit(
-      :body, :author_id, :messageable_id, :messageable_type
-    )
+    params.require(:message).permit(:body)
   end
 end
