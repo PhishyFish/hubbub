@@ -66,7 +66,7 @@ button.icon.add-server {
   color: $add-hover;
 }
 
-.servers .server:hover {
+.servers .icon:hover {
   border-radius: 15px;
   background: $purple;
   animation: icon-bounce 0.6s ease-in-out;
