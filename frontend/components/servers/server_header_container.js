@@ -4,8 +4,8 @@ import { withRouter } from 'react-router-dom';
 import { fetchServer } from '../../actions/server_actions';
 import ServerHeader from './server_header';
 
-const mapStateToProps = state => {
-  const serverId = parseInt(state.entities.match.params.serverId);
+const mapStateToProps = (state, { match }) => {
+  const serverId = parseInt(match.params.serverId);
   const server = state.entities.servers[serverId] || {};
 
   return {

@@ -5,7 +5,7 @@ import ChannelsList from './channels_list';
 import UserContainer from '../user/user_container';
 import DMsListContainer from '../direct_messages/dms_list_container';
 import ChannelsListContainer from '../channels/channels_list_container';
-import ServerHeader from '../servers/server_header';
+import ServerHeaderContainer from '../servers/server_header_container';
 import DMsListHeader from '../direct_messages/dms_list_header';
 
 class Channels extends React.Component {
@@ -15,7 +15,7 @@ class Channels extends React.Component {
         <div className="channels-header">
           <Switch>
             <Route path="/channels/@me" component={DMsListHeader} />
-            <Route path="/channels/:serverId" component={ServerHeader} />
+            <Route path="/channels/:serverId" component={ServerHeaderContainer} />
           </Switch>
         </div>
 
