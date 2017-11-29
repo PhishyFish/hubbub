@@ -25,10 +25,54 @@
 }
 
 .message-group {
+  display: flex;
+  flex: 1;
   border-bottom: 1px solid $message-border;
   margin: 10px 20px;
   padding: 20px 0;
   color: $form-text;
+}
+
+.message-icon {
+  flex: 0 0 auto;
+  margin-right: 20px;
+  width: 40px;
+}
+
+.messages .icon {
+  margin: 0;
+  width: 40px;
+  height: 40px;
+}
+
+.message-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.message-title {
+  display: flex;
+  align-items: baseline;
+}
+
+.message-content .username {
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+}
+
+.timestamp {
+  margin-left: 5px;
+  font-size: 12px;
+  font-weight: 300;
+  color: $message-time;
+}
+
+.message-body {
+  margin-top: 5px;
+  font-size: 14px;
+  white-space: pre-wrap;
+  word-wrap: break-word;
 }
 
 .messages form {

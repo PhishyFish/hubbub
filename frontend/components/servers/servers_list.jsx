@@ -26,7 +26,10 @@ class ServersList extends React.Component {
             <hr />
 
             {this.props.servers.map(server => (
-              <ServersListItem server={server} key={server.id} />
+              <ServersListItem
+                server={server}
+                channels={server.channels}
+                key={server.id} />
             ))}
 
             <Link to="/channels/@me">

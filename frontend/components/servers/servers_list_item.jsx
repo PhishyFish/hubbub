@@ -1,7 +1,7 @@
 import React from 'react';
 import { NavLink, withRouter } from 'react-router-dom';
 
-const ServersListItem = ({ server }) => {
+const ServersListItem = ({ server, channels }) => {
   let icon;
   if (server.img_url) {
     icon = <img src={server.img} />;
@@ -12,7 +12,7 @@ const ServersListItem = ({ server }) => {
   }
 
   return (
-    <NavLink to={`/channels/${server.id}`}>
+    <NavLink to={`/channels/${server.id}/${channels[0].id}`}>
       <div className="icon server">
         {icon}
       </div>

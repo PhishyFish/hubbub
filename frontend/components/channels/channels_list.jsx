@@ -13,7 +13,9 @@ class ChannelsList extends React.Component {
   }
 
   componentWillReceiveProps(newProps) {
-    newProps.fetchChannels(newProps.match.params.serverId);
+    if (this.props.match.params.serverId !== newProps.match.params.serverId) {
+      newProps.fetchChannels(newProps.match.params.serverId);
+    }
   }
 
   render() {
@@ -26,7 +28,7 @@ class ChannelsList extends React.Component {
               key={channel.id} />
           ))}
         </div>
-    </div>
+      </div>
     );
   }
 }
