@@ -6,7 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-User.create(username: "Hubbub", password: "password")
+User.create(username: "Hubbub", password: "hubadmin")
 Server.create(name: "Global", owner_id: 1)
 Channel.create(name: "chatter", server_id: 1)
 Channel.create(name: "news", server_id: 1)
@@ -27,11 +27,26 @@ avatars = [
 ]
 
 demo_users.each do |name|
-  User.create(username: name, password: "password", img_url: avatars.sample)
-  ServerMember.create(server_id: 1, member_id: User.find_by(username: name))
+  User.create(
+    username: name,
+    password: "password",
+    img_url: avatars.sample
+  )
+  ServerMember.create(
+    server_id: Server.find_by(name: "Global"),
+    member_id: User.find_by(username: name)
+  )
 end
 
 DirectMessage.create(name: "Cool Cats")
-demo_users.drop(15).each do |name|
-  DirectMessageMember.create(direct_message_id: 1, member_id: User.find_by(username: name))
+demo_users.drop(16).each do |name|
+  DirectMessageMember.create(
+    direct_message_id: DirectMessage.find_by(name: "Cool Cats"),
+    member_id: User.find_by(username: name)
+  )
+  Message.create(
+    body: "hi, I'm #{name}!",
+    author_id: User.find_by(username: name),
+    messageable: DirectMessage.find_by(name: "Cool Cats")
+  )
 end
