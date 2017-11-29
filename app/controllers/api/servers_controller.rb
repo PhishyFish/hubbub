@@ -21,6 +21,7 @@ class Api::ServersController < ApplicationController
     @server.owner_id = current_user.id
 
     if @server.save
+      Channel.create(name: "general", server_id: @server.id)
       ServerMember.create(server_id: @server.id, member_id: current_user.id)
       render :show
     else
