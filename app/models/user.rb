@@ -1,9 +1,19 @@
+# == Schema Information
+#
+# Table name: users
+#
+#  id              :integer          not null, primary key
+#  username        :string           not null
+#  password_digest :string           not null
+#  session_token   :string           not null
+#  created_at      :datetime         not null
+#  updated_at      :datetime         not null
+#  img_url         :string           default("https://i.lensdump.com/i/VjLYH.png"), not null
+#
+
 class User < ApplicationRecord
   attr_reader :password
 
-  # before_validation :downcase_username
-
-  # validates :username, with: /^[A-Za-z0-9]+$/
   validates :username, :password_digest, :session_token, :img_url, presence: true
   validates :username, :session_token, uniqueness: true
   validates :password, length: { minimum: 6 }, allow_nil: true

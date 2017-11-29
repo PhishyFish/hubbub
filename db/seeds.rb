@@ -6,8 +6,13 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-User.create(username: "Hubbub", password: "hubadmin")
+admin = User.create(username: "Hubbub", password: "hubadmin")
 global = Server.create(name: "Global", owner_id: 1)
+ServerMember.create(
+  server_id: global.id,
+  member_id: admin.id
+)
+
 Channel.create(name: "chatter", server_id: 1)
 Channel.create(name: "news", server_id: 1)
 Channel.create(name: "cat-gifs", server_id: 1)

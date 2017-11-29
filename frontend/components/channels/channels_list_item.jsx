@@ -5,7 +5,7 @@ const ChannelsListItem = ({ channel, serverId }) => (
   <NavLink to={`/channels/${serverId}/${channel.id}`}>
     <div className="channel-item flex-row">
       <div className="channel-icon">
-        <i class="fa fa-hashtag" aria-hidden="true"></i>
+        <i className="fa fa-hashtag" aria-hidden="true"></i>
       </div>
       <div className="channel-name">
         {`${channel.name}`}
