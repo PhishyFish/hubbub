@@ -24,7 +24,7 @@ class MessagesList extends React.Component {
 
   render() {
     return(
-      <div className="messages scroller">
+      <div className="message-list scroller">
         {this.props.messages.map(message => (
           <MessagesListItem message={message}
             channelId={this.props.match.params.channelId}
