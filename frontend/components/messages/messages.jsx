@@ -3,6 +3,7 @@ import { Route, withRouter } from 'react-router-dom';
 
 import MessagesListContainer from './messages_list_container';
 import MessageForm from './message_form';
+import MembersList from '../members/members_list';
 
 class Messages extends React.Component {
   render() {
@@ -24,13 +25,10 @@ class Messages extends React.Component {
               component={MessageForm}
             />
           </div>
-          <div className="members-container">
-            <div className="scroller-wrap">
-              <div className="members scroller">
-                <h2>Members</h2>
-              </div>
-            </div>
-          </div>
+          <Route 
+            path="/channels/:serverId/:channelId"
+            component={MembersList}
+          />
         </div>
       </div>
     );

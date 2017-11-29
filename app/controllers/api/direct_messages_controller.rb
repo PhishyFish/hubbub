@@ -47,6 +47,8 @@ class Api::DirectMessagesController < ApplicationController
     render :show
   end
 
+  private
+
   def dm_params
     params.require(:directMessage).permit(:name)
   end
