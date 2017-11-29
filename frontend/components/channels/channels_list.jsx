@@ -12,6 +12,10 @@ class ChannelsList extends React.Component {
     this.props.fetchChannels(this.props.match.params.serverId);
   }
 
+  componentWillReceiveProps(newProps) {
+    newProps.fetchChannels(newProps.match.params.serverId);
+  }
+
   render() {
     return(
       <div className="scroller-wrap">
