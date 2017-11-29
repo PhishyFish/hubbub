@@ -33,5 +33,5 @@ end
 
 DirectMessage.create(name: "Cool Cats")
 demo_users.drop(15).each do |name|
-  DirectMessageMembers.create(direct_message_id: 1, member_id: User.find_by(username: name))
+  DirectMessageMember.create(direct_message_id: 1, member_id: User.find_by(username: name))
 end
