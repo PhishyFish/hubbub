@@ -5,13 +5,19 @@ class MessageForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      body: ""
+      body: ''
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.handleKeyPress = this.handleKeyPress.bind(this);
     this.adjustHeight = this.adjustHeight.bind(this);
+  }
+
+  componentWillReceiveProps(newProps) {
+    if (this.props.match.url !== newProps.match.url) {
+      this.setState({ body: '' });
+    }
   }
 
   handleSubmit(e) {
@@ -44,7 +50,7 @@ class MessageForm extends React.Component {
         <div className="message-input">
           <textarea
             className="chat"
-            style={{height: 'auto'}}
+            style={{ height: 'auto' }}
             rows="1"
             placeholder={`Message (channel/group/username)`}
             value={this.state.body}

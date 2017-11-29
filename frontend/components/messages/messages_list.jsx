@@ -16,9 +16,11 @@ class MessagesList extends React.Component {
   }
 
   componentWillReceiveProps(newProps) {
-    if ((this.props.match.params.channelId !== newProps.match.params.channelId) ||
-        (this.props.match.params.serverId !== newProps.match.params.serverId)) {
-      newProps.fetchMessages(newProps.match.params.serverId, newProps.match.params.channelId);
+    if (this.props.match.url !== newProps.match.url) {
+      newProps.fetchMessages(
+        newProps.match.params.serverId,
+        newProps.match.params.channelId
+      );
     }
   }
 
