@@ -4,9 +4,15 @@ import { withRouter } from 'react-router-dom';
 import { fetchServer } from '../../actions/server_actions';
 import ServerHeader from './server_header';
 
-const mapStateToProps = state => ({
+const mapStateToProps = state => {
+  const serverId = parseInt(state.entities.match.params.serverId);
+  const server = state.entities.servers[serverId] || {};
 
-});
+  return {
+    serverId,
+    server
+  };
+};
 
 const mapDispatchToProps = dispatch => ({
   fetchServer: serverId => dispatch(fetchServer(serverId))

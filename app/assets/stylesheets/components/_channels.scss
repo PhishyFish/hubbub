@@ -4,6 +4,8 @@
   background: $channel-gray;
   justify-content: space-between;
   height: 100%;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
 }
 
 .channels {
@@ -13,6 +15,7 @@
 .channels-header {
   flex: 0 0 auto;
   padding: 0 15px;
+  border-top-left-radius: 5px;
   background: $channel-header;
   box-shadow: 0 1px 0 rgba(0,0,0,.2), 0 2px 0 rgba(0,0,0,.06);
 }
@@ -81,4 +84,32 @@
 
 .active .channel-name {
   color: $channel-selected;
+}
+
+.channels-header .search-bar {
+  display: flex;
+  align-items: center;
+  height: 48px;
+}
+
+.channels-header .search-bar-inner {
+  width: 100%;
+  padding: 2px;
+  border-radius: 4px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.channels-header button {
+  flex: 1;
+  width: 100%;
+  min-width: 50px;
+  height: 25px;
+  padding: 5px 10px;
+  font-size: 12px;
+  color: $searchbar-text;
+  text-align: left;
+  box-sizing: border-box;
+  resize: none;
+  cursor: pointer;
 }
