@@ -2,7 +2,6 @@ class Api::MessagesController < ApplicationController
   before_action :require_login
 
   def index
-    # debugger
     @messages = current_channel.messages
     render :index
   end
@@ -40,7 +39,6 @@ class Api::MessagesController < ApplicationController
   end
 
   def current_channel
-    # debugger
     if params[:serverId] == "@me"
       @current_channel = DirectMessage.find(params[:channelId])
     else
