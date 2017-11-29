@@ -28,10 +28,10 @@ avatars = [
 
 demo_users.each do |name|
   User.create(username: name, password: "password", img_url: avatars.sample)
-  ServerMember.create(server_id: 1, member_id: User.find_by(name: name))
+  ServerMember.create(server_id: 1, member_id: User.find_by(username: name))
 end
 
 DirectMessage.create(name: "Cool Cats")
 demo_users.drop(15).each do |name|
-  DirectMessageMembers.create(direct_message_id: 1, member_id: User.find_by(name: name))
+  DirectMessageMembers.create(direct_message_id: 1, member_id: User.find_by(username: name))
 end
