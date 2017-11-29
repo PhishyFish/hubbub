@@ -10,28 +10,21 @@ class MessageForm extends React.Component {
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
-    this.handleKeypress = this.handleKeypress.bind(this);
-  }
-
-  componentDidMount() {
-    document.addEventListener("keypress", this.handleKeypress);
-  }
-
-  componentWillUnmount() {
-    document.removeEventListener("keypress", this.handleKeypress);
+    this.handleKeyPress = this.handleKeyPress.bind(this);
   }
 
   handleSubmit(e) {
     e.preventDefault();
+    e.target.value = '';
   }
 
   handleChange(e) {
     this.setState({ body: e.target.value });
   }
 
-  handleKeypress(e) {
-    if (e.keyCode === 13) {
-      console.log("enter pressed!");
+  handleKeyPress(e) {
+    if (e.key === 'Enter') {
+      console.log('enter pressed!');
       this.handleSubmit(e);
     }
   }
@@ -46,6 +39,7 @@ class MessageForm extends React.Component {
             placeholder={`Message (channel/group/username)`}
             value={this.state.body}
             onChange={this.handleChange}
+            onKeyPress={this.handleKeyPress}
           >
           </textarea>
         </div>
