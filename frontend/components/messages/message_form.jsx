@@ -11,6 +11,7 @@ class MessageForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.handleKeyPress = this.handleKeyPress.bind(this);
+    this.adjustHeight = this.adjustHeight.bind(this);
   }
 
   handleSubmit(e) {
@@ -24,8 +25,16 @@ class MessageForm extends React.Component {
 
   handleKeyPress(e) {
     if (e.key === 'Enter') {
-      console.log('enter pressed!');
       this.handleSubmit(e);
+    }
+  }
+
+  adjustHeight(e) {
+    e.target.style.height = 'auto';
+    if (e.target.scrollHeight < 146) {
+      e.target.style.height = (e.target.scrollHeight) + 'px';
+    } else {
+      e.target.style.height = 145 + 'px';
     }
   }
 
@@ -35,11 +44,13 @@ class MessageForm extends React.Component {
         <div className="message-input">
           <textarea
             className="chat"
+            style={{height: 'auto'}}
             rows="1"
             placeholder={`Message (channel/group/username)`}
             value={this.state.body}
             onChange={this.handleChange}
             onKeyPress={this.handleKeyPress}
+            onKeyUp={this.adjustHeight}
           >
           </textarea>
         </div>
