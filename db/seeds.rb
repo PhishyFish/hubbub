@@ -7,7 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 User.create(username: "Hubbub", password: "hubadmin")
-Server.create(name: "Global", owner_id: 1)
+global = Server.create(name: "Global", owner_id: 1)
 Channel.create(name: "chatter", server_id: 1)
 Channel.create(name: "news", server_id: 1)
 Channel.create(name: "cat-gifs", server_id: 1)
@@ -33,20 +33,20 @@ demo_users.each do |name|
     img_url: avatars.sample
   )
   ServerMember.create(
-    server_id: Server.find_by(name: "Global"),
-    member_id: User.find_by(username: name)
+    server_id: global.id,
+    member_id: User.find_by(username: name).id
   )
 end
 
-DirectMessage.create(name: "Cool Cats")
+cool_cats = DirectMessage.create(name: "Cool Cats")
 demo_users.drop(16).each do |name|
   DirectMessageMember.create(
-    direct_message_id: DirectMessage.find_by(name: "Cool Cats"),
-    member_id: User.find_by(username: name)
+    direct_message_id: cool_cats.id,
+    member_id: User.find_by(username: name).id
   )
   Message.create(
     body: "hi, I'm #{name}!",
-    author_id: User.find_by(username: name),
-    messageable: DirectMessage.find_by(name: "Cool Cats")
+    author_id: User.find_by(username: name).id,
+    messageable: cool_cats
   )
 end
