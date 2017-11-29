@@ -2,6 +2,7 @@ import React from 'react';
 import { Route, withRouter } from 'react-router-dom';
 
 import MessagesListContainer from './messages_list_container';
+import MessageForm from './message_form';
 
 class Messages extends React.Component {
   render() {
@@ -12,17 +13,16 @@ class Messages extends React.Component {
         </div>
         <div className="content flex-row">
           <div className="messages flex-column">
-            <Route path="/channels/:serverId/:channelId"
-              component={MessagesListContainer}
+            <div className="scroller-wrap">
+              <Route
+                path="/channels/:serverId/:channelId"
+                component={MessagesListContainer}
+              />
+            </div>
+            <Route
+              path="/channels/:serverId/:channelId"
+              component={MessageForm}
             />
-            <form>
-              <div class="message-input">
-                <textarea class="chat"
-                  rows="1"
-                  placeholder="Message (channel/group/username)">
-                </textarea>
-              </div>
-            </form>
           </div>
           <div className="members-container">
             <div className="scroller-wrap">

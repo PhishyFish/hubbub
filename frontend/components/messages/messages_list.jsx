@@ -24,15 +24,13 @@ class MessagesList extends React.Component {
 
   render() {
     return(
-        <div className="scroller-wrap">
-          <div className="messages scroller">
-            {this.props.messages.map(message => (
-              <MessagesListItem message={message}
-                channelId={this.props.match.params.channelId}
-                key={message.id} />
-            ))}
-          </div>
-        </div>
+      <div className="messages scroller">
+        {this.props.messages.map(message => (
+          <MessagesListItem message={message}
+            channelId={this.props.match.params.channelId}
+            key={message.id} />
+        ))}
+      </div>
     );
   }
 }
