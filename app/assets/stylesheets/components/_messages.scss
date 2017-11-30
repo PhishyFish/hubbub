@@ -119,3 +119,13 @@ textarea.chat::placeholder {
   text-overflow: ellipsis;
   white-space: nowrap;
 }
+
+.messages .scroller-wrap ::-webkit-scrollbar-thumb {
+  background-color: $scrollbar-black;
+  border-color: $message-gray;
+}
+
+.messages .scroller-wrap ::-webkit-scrollbar-track-piece {
+  background-color: $channel-gray;
+  border-color: $message-gray;
+}

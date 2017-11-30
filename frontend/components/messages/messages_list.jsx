@@ -24,9 +24,27 @@ class MessagesList extends React.Component {
     }
   }
 
+  componentWillUpdate() {
+    let list = this.refs.list;
+
+    this.shouldScroll =
+      list.scrollTop + list.offsetHeight === list.scrollHeight;
+  }
+
+  componentDidUpdate() {
+    if (this.shouldScroll) {
+      this.scrollToBottom();
+    }
+  }
+
+  scrollToBottom() {
+    let list = this.refs.list;
+    list.scrollTop = list.scrollHeight;
+  }
+
   render() {
     return(
-      <div className="message-list scroller">
+      <div className="message-list scroller" ref="list">
         {this.props.messages.map(message => (
           <MessagesListItem message={message}
             channelId={this.props.match.params.channelId}

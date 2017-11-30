@@ -90,3 +90,20 @@ hr {
   flex: 1;
   overflow: hidden;
 }
+
+.scroller-wrap .scroller::-webkit-scrollbar {
+    width: 14px;
+}
+
+.scroller-wrap .scroller::-webkit-scrollbar-thumb,
+.scroller-wrap .scroller::-webkit-scrollbar-track-piece {
+  background-clip: padding-box;
+  background-color: $channel-gray;
+  border: 3px solid $channel-gray;
+  border-radius: 7px;
+}
+
+.scroller-wrap ::-webkit-scrollbar-thumb {
+  background-color: $channel-gray;
+  border-color: $message-gray;
+}
