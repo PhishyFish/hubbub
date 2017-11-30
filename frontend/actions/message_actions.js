@@ -25,14 +25,14 @@ export const fetchMessage = id => dispatch => (
   ))
 );
 
-export const createMessage = message => dispatch => (
-  MessageUtil.createMessage(message).then(message => (
+export const createMessage = msg => dispatch => (
+  MessageUtil.createMessage(msg).then(message => (
     dispatch(receiveMessage(message))
   ))
 );
 
-export const updateMessage = message => dispatch => (
-  MessageUtil.updateMessage(message).then(message => (
+export const updateMessage = msg => dispatch => (
+  MessageUtil.updateMessage(msg).then(message => (
     dispatch(receiveMessage(message))
   ))
 );

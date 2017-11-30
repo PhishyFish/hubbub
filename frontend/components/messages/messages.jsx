@@ -2,7 +2,7 @@ import React from 'react';
 import { Route, withRouter } from 'react-router-dom';
 
 import MessagesListContainer from './messages_list_container';
-import MessageForm from './message_form';
+import MessageFormContainer from './message_form_container';
 import MembersList from '../members/members_list';
 
 class Messages extends React.Component {
@@ -22,10 +22,10 @@ class Messages extends React.Component {
             </div>
             <Route
               path="/channels/:serverId/:channelId"
-              component={MessageForm}
+              component={MessageFormContainer}
             />
           </div>
-          <Route 
+          <Route
             path="/channels/:serverId/:channelId"
             component={MembersList}
           />

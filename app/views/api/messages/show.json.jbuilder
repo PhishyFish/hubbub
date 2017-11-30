@@ -1,3 +1,4 @@
-@message.includes(:author)
-
-json.extract! @message, :id, :body, :author, :created_at
+json.set! @message.id do
+  json.extract! @message, :id, :body, :author
+  json.created_at @message.created_at.strftime("%A, %B %d, %Y at %I:%M %p")
+end

@@ -25,14 +25,14 @@ export const fetchServer = id => dispatch => (
   ))
 );
 
-export const createServer = server => dispatch => (
-  ServerUtil.createServer(server).then(server => (
+export const createServer = srv => dispatch => (
+  ServerUtil.createServer(srv).then(server => (
     dispatch(receiveServer(server))
   ))
 );
 
-export const updateServer = server => dispatch => (
-  ServerUtil.updateServer(server).then(server => (
+export const updateServer = srv => dispatch => (
+  ServerUtil.updateServer(srv).then(server => (
     dispatch(receiveServer(server))
   ))
 );

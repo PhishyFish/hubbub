@@ -25,14 +25,14 @@ export const fetchChannel = id => dispatch => (
   ))
 );
 
-export const createChannel = channel => dispatch => (
-  ChannelUtil.createChannel(channel).then(channel => (
+export const createChannel = ch => dispatch => (
+  ChannelUtil.createChannel(ch).then(channel => (
     dispatch(receiveChannel(channel))
   ))
 );
 
-export const updateChannel = channel => dispatch => (
-  ChannelUtil.updateChannel(channel).then(channel => (
+export const updateChannel = ch => dispatch => (
+  ChannelUtil.updateChannel(ch).then(channel => (
     dispatch(receiveChannel(channel))
   ))
 );

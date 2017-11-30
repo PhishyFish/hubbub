@@ -52,7 +52,7 @@ class MessageForm extends React.Component {
             className="chat"
             style={{ height: 'auto' }}
             rows="1"
-            placeholder={`Message (channel/group/username)`}
+            placeholder={'Message this group'}
             value={this.state.body}
             onChange={this.handleChange}
             onKeyPress={this.handleKeyPress}
