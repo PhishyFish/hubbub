@@ -25,8 +25,8 @@ export const fetchMessage = id => dispatch => (
   ))
 );
 
-export const createMessage = msg => dispatch => (
-  MessageUtil.createMessage(msg).then(message => (
+export const createMessage = (msg, chId, srvId) => dispatch => (
+  MessageUtil.createMessage(msg, chId, srvId).then(message => (
     dispatch(receiveMessage(message))
   ))
 );

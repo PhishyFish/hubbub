@@ -1,16 +1,28 @@
 import React from 'react';
-import { Route, withRouter } from 'react-router-dom';
+import { Route, Switch, withRouter } from 'react-router-dom';
 
 import MessagesListContainer from './messages_list_container';
 import MessageFormContainer from './message_form_container';
 import MembersList from '../members/members_list';
+import MessagesHeaderContainer from './messages_header_container';
+import MainHeader from '../main/main_header';
 
 class Messages extends React.Component {
   render() {
+    console.log(this.props);
     return (
       <div className="messages-container flex-column">
         <div className="messages-header">
-          <h1>Message/Channel Name</h1>
+          <Switch>
+            <Route
+              path="/channels/:serverId/:channelId"
+              component={MessagesHeaderContainer}
+            />
+            <Route
+              path="/channels"
+              component={MainHeader}
+            />
+          </Switch>
         </div>
         <div className="content flex-row">
           <div className="messages flex-column">

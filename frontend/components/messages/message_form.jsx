@@ -22,6 +22,12 @@ class MessageForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
+    let { params } = this.props.match;
+    this.props.createMessage(
+      { body: e.target.value },
+      params.channelId,
+      params.serverId
+    );
     e.target.value = '';
   }
 
@@ -44,6 +50,12 @@ class MessageForm extends React.Component {
     }
   }
 
+  renderChannelName() {
+    if (this.props.currentChannel) {
+      return(this.props.currentChannel.name);
+    }
+  }
+
   render() {
     return (
       <form onSubmit={this.handleSubmit}>
@@ -52,7 +64,7 @@ class MessageForm extends React.Component {
             className="chat"
             style={{ height: 'auto' }}
             rows="1"
-            placeholder={'Message this group'}
+            placeholder={`Message ${this.renderChannelName()}`}
             value={this.state.body}
             onChange={this.handleChange}
             onKeyPress={this.handleKeyPress}

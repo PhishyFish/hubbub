@@ -14,7 +14,7 @@ class Api::MessagesController < ApplicationController
     @message = Message.new(message_params)
     @message.author_id = current_user.id
 
-    if params[:serverId] = "@me"
+    if params[:serverId] == "@me"
       @message.messageable = DirectMessage.find(params[:channelId])
     else
       @message.messageable = Channel.find(params[:channelId])
