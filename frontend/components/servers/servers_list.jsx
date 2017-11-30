@@ -17,9 +17,12 @@ class ServersList extends React.Component {
       <div className="servers-container flex-column">
         <div className="scroller-wrap">
           <section className="servers scroller">
-            <NavLink to="/channels/@me">
+            <NavLink to="/channels/@me" className="tooltip-icon">
               <div className="icon friends">
                 <i className="fa fa-users fa-lg"></i>
+              </div>
+              <div className="tooltips">
+                <span className="tooltip">Direct Messages</span>
               </div>
             </NavLink>
 

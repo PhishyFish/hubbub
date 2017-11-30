@@ -76,6 +76,44 @@ button.icon.add-server {
   animation: none;
 }
 
+.tooltips {
+  position: relative;
+  top: -50px;
+  right: -58px;
+}
+
+.tooltip {
+  display: none;
+  padding: 8px 10px;
+  background: #000;
+  color: #fff;
+  border-radius: 5px;
+  z-index: 2;
+}
+
+span.tooltip {
+  font-size: 13px;
+}
+
+.tooltip-icon:hover .tooltip {
+  display: block;
+  position: fixed;
+}
+
+.tooltip-icon:hover .tooltip::before{
+  content: '';
+  display: block;
+  position: absolute;
+  z-index: 2;
+  left: -5px;
+  top: 10px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 6px 5px 6px 0;
+  border-color: transparent #000 transparent transparent;
+}
+
 @keyframes icon-bounce {
   0% {
     border-radius: 25px;
