@@ -9,7 +9,6 @@ import MainHeader from '../main/main_header';
 
 class Messages extends React.Component {
   render() {
-    console.log(this.props);
     return (
       <div className="messages-container flex-column">
         <div className="messages-header">

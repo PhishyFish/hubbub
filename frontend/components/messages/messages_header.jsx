@@ -8,12 +8,13 @@ class MessagesHeader extends React.Component {
 
   renderHeader() {
     if (this.props.currentChannel) {
+      let icon;
+      if (this.props.match.params.serverId !== '@me') {
+        icon = <i className="fa fa-hashtag" aria-hidden="true"></i>;
+      }
+
       return(
-        <h1>{this.props.currentChannel.name}</h1>
-      );
-    } else {
-      return(
-        <h1>Hubbub</h1>
+        <h1>{icon} {this.props.currentChannel.name}</h1>
       );
     }
   }
