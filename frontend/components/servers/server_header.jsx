@@ -6,6 +6,7 @@ class ServerHeader extends React.Component {
     super(props);
 
     this.toggleDropdown = this.toggleDropdown.bind(this);
+    this.closeDropdown = this.closeDropdown.bind(this);
   }
 
   componentDidMount() {
@@ -31,7 +32,7 @@ class ServerHeader extends React.Component {
 
   closeDropdown(e) {
     e.preventDefault();
-    document.querySelector('.channels-header-dropdown').remove('visible');
+    document.querySelector('.channels-header-dropdown').classList.remove('visible');
   }
 
   handleKeyUp(e) {

@@ -33,7 +33,11 @@ class ChannelHeaderModal extends React.Component {
             <span className="popout-action">Create Channel</span>
           </div>
         </div>
-        <div className="channels-header-backdrop" onClick={this.closeDropdown}></div>
+        <div
+          className="channels-header-backdrop"
+          onClick={this.closeDropdown}
+        >
+        </div>
       </div>
     );
   }

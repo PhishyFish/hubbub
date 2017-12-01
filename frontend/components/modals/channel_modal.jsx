@@ -12,7 +12,6 @@ class ChannelModal extends React.Component {
     this.closeModal = this.closeModal.bind(this);
     this.updateName = this.updateName.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.handleKeyUp = this.handleKeyUp.bind(this);
   }
 
   componentDidMount() {
