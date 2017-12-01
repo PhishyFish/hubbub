@@ -17,7 +17,8 @@ class ChannelHeaderModal extends React.Component {
 
   closeDropdown(e) {
     e.preventDefault();
-    document.querySelector('.channels-header-dropdown').classList.remove('visible');
+    document.querySelector('.channels-header-dropdown')
+      .classList.remove('visible');
   }
 
   render() {
@@ -32,6 +33,7 @@ class ChannelHeaderModal extends React.Component {
             <span className="popout-action">Create Channel</span>
           </div>
         </div>
+        <div className="channels-header-backdrop" onClick={this.closeDropdown}></div>
       </div>
     );
   }
