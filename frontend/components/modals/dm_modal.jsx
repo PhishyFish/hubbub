@@ -18,10 +18,16 @@ class DMModal extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.addMember = this.addMember.bind(this);
     this.removeMember = this.removeMember.bind(this);
+    this.handleKeyUp = this.handleKeyUp.bind(this);
   }
 
   componentDidMount() {
     this.props.fetchUsers(this.props.match.params.serverId);
+    document.addEventListener('keyup', e => this.handleKeyUp(e));
+  }
+
+  componentWillUnmount() {
+    document.removeEventListener('keyup', e => this.handleKeyUp(e));
   }
 
   updateSearch(e) {
@@ -66,6 +72,12 @@ class DMModal extends React.Component {
       }
     });
     this.closeModal(e);
+  }
+
+  handleKeyUp(e) {
+    if (e.key === 'Escape') {
+      this.closeModal(e);
+    }
   }
 
   render() {
@@ -123,7 +135,7 @@ class DMModal extends React.Component {
             </button>
           </div>
         </form>
-        <div className="modal-backdrop"></div>
+        <div className="modal-backdrop" onClick={this.closeModal}></div>
       </div>
     );
   }
