@@ -39,6 +39,7 @@ class MembersList extends React.Component {
               {this.props.channel.members.map(user => {
                 return <MembersListItem user={user} />;
               })}
+              <div className="spacer"></div>
             </div>
           </div>
         </div>
