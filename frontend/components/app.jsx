@@ -7,6 +7,7 @@ import SessionFormBackground from './session_form/session_form_background';
 import SplashContainer from './splash/splash_container';
 import MainContainer from './main/main_container';
 import DMModalContainer from './modals/dm_modal_container';
+import ChannelModalContainer from './modals/channel_modal_container';
 
 const App = () => (
   <div className="app-container">
@@ -21,6 +22,7 @@ const App = () => (
     </Switch>
 
     <ProtectedRoute path="/channels/:serverId" component={DMModalContainer} />
+    <ProtectedRoute path="/channels/:serverId" component={ChannelModalContainer} />
   </div>
 );
 

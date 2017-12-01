@@ -21,6 +21,18 @@
   z-index: 1;
 }
 
+.channels-header.server:hover {
+  background: rgba(0, 0, 0, 0.2);
+  transition: all 0.25s ease;
+  cursor: pointer;
+}
+
+.channels-header-content {
+  display: flex;
+  align-items: center;
+  flex: 0 0 auto;
+}
+
 .channels header {
   margin-bottom: 5px;
   padding: 10px 20px;
@@ -87,6 +99,10 @@
   color: $channel-selected;
 }
 
+.channels-header {
+  position: relative;
+}
+
 .channels-header .search-bar {
   display: flex;
   align-items: center;
@@ -113,6 +129,13 @@
   box-sizing: border-box;
   resize: none;
   cursor: pointer;
+}
+
+.channels-header-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
 }
 
 .channels .scroller {

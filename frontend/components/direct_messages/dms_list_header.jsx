@@ -7,11 +7,11 @@ const DMsListHeader = () => {
   };
 
   return(
-    <div className="search-bar">
-      <div className="search-bar-inner">
-        <a href="#">
+    <div className="channels-header">
+      <div className="search-bar">
+        <div className="search-bar-inner">
           <button onClick={openModal}>Find or start a conversation</button>
-        </a>
+        </div>
       </div>
     </div>
   );

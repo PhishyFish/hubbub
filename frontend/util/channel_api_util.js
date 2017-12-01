@@ -13,11 +13,11 @@ export const fetchChannel = channelId => (
   })
 );
 
-export const createChannel = channel => (
+export const createChannel = (channel, serverId) => (
   $.ajax({
     method: 'POST',
     url: 'api/channels',
-    data: { channel }
+    data: { channel, serverId }
   })
 );
 

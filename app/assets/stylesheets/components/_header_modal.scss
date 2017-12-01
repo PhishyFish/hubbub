@@ -1,0 +1,40 @@
+.channels-header-dropdown {
+  visibility: hidden;
+  position: absolute;
+  width: 220px;
+  top: 60px;
+  left: 85px;
+  z-index: 3;
+}
+
+.visible {
+  visibility: visible;
+}
+
+.popout-menu {
+  display: flex;
+  align-items: center;
+  flex: 1 0 auto;
+  font-size: 14px;
+  color: $dropdown-text;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.popout-menu-item {
+  width: 100%;
+  padding: 10px;
+  background: #fff;
+  box-sizing: border-box;
+  text-align: left;
+}
+
+.popout-menu-item:hover {
+  background: $dropdown-hover;
+  color: $dropdown-hover-text;
+  cursor: pointer;
+}
+
+.popout-menu-item i {
+  margin: 0 10px;
+}

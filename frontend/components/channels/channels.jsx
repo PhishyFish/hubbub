@@ -7,17 +7,17 @@ import DMsListContainer from '../direct_messages/dms_list_container';
 import ChannelsListContainer from '../channels/channels_list_container';
 import ServerHeaderContainer from '../servers/server_header_container';
 import DMsListHeader from '../direct_messages/dms_list_header';
+import ChannelHeaderModal from '../modals/channel_header_modal';
 
 class Channels extends React.Component {
   render() {
     return (
       <div className="channels-container flex-column">
-        <div className="channels-header">
-          <Switch>
-            <Route path="/channels/@me" component={DMsListHeader} />
-            <Route path="/channels/:serverId" component={ServerHeaderContainer} />
-          </Switch>
-        </div>
+        <Switch>
+          <Route path="/channels/@me" component={DMsListHeader} />
+          <Route path="/channels/:serverId" component={ServerHeaderContainer} />
+        </Switch>
+        <ChannelHeaderModal />
 
         <div className="channels flex-column">
           <Switch>

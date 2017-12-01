@@ -1,0 +1,87 @@
+.channel-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 440px;
+  min-height: 200px;
+  max-height: 500px;
+  padding: 20px 20px 10px 20px;
+  position: absolute;
+  top: 25%;
+  z-index: 4;
+  background: $channel-header;
+  border-radius: 8px;
+}
+
+.channel-form h4, .channel-form h5 {
+  font-family: 'Source Sans Pro', $sans-serif;
+}
+
+.channel-form h4 {
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  line-height: 20px;
+  font-size: 16px;
+  word-wrap: break-word;
+  color: $channel-selected;
+}
+
+.channel-form h5 {
+  text-transform: uppercase;
+  color: $channel-icon;
+  letter-spacing: 0.5px;
+  margin-bottom: 10px;
+  line-height: 16px;
+  font-size: 12px;
+}
+
+.channel-form input {
+  height: 40px;
+  padding: 10px;
+  background: rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  border-radius: 3px;
+  color: $channel-selected;
+  box-sizing: border-box;
+}
+
+.channel-form p {
+  margin-top: 5px;
+  color: $channel-unselected;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.channel-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-top: 20px;
+  flex: 0 0 auto;
+}
+
+.channel-submit, .channel-cancel {
+  min-height: 40px;
+  min-width: 100px;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 2px 15px;
+  transition: all 0.2s ease;
+}
+
+.channel-submit {
+  background: $purple;
+}
+
+.channel-submit:hover {
+  background: $darker-purple;
+}
+
+.channel-cancel {
+  color: $channel-cancel;
+}
+
+.channel-cancel:hover {
+  text-decoration: underline;
+}
