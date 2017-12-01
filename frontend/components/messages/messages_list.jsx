@@ -8,36 +8,31 @@ class MessagesList extends React.Component {
     super(props);
   }
 
+  componentWillMount() {
+    let { serverId, channelId } = this.props.match.params;
+    this.channel = pusher.subscribe(`${serverId}-${channelId}`);
+  }
+
   componentDidMount() {
     let { serverId, channelId } = this.props.match.params;
-
     this.props.fetchMessages(serverId, channelId);
 
-    const channel = pusher.subscribe(`${serverId}-${channelId}`);
-
-    channel.bind('create-message', message => {
+    this.channel.bind('new-message', message => {
       this.props.fetchMessages(serverId, channelId);
     }, this);
   }
 
   componentWillReceiveProps(newProps) {
-    if (this.props.match.url !== newProps.match.url) {
-      newProps.fetchMessages(
-        newProps.match.params.serverId,
-        newProps.match.params.channelId
-      );
+    let { match } = this.props;
+    let { serverId, channelId } = newProps.match.params;
 
-      pusher.unsubscribe(
-        `${this.props.match.params.serverId}-${this.props.match.params.channelId}`
-      );
-      const channel = pusher.subscribe(
-        `${newProps.match.params.serverId}-${newProps.match.params.channelId}`
-      );
-      channel.bind('create-message', message => {
-        this.props.fetchMessages(
-          newProps.match.params.serverId,
-          newProps.match.params.channelId
-        );
+    if (match.url !== newProps.match.url) {
+      newProps.fetchMessages(serverId, channelId);
+
+      pusher.unsubscribe(`${match.params.serverId}-${match.params.channelId}`);
+      this.channel = pusher.subscribe(`${serverId}-${channelId}`);
+      this.channel.bind('new-message', message => {
+        this.props.fetchMessages(serverId, channelId);
       }, this);
     }
   }
