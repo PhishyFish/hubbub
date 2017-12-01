@@ -3,7 +3,7 @@ import { Route, Switch, withRouter } from 'react-router-dom';
 
 import MessagesListContainer from './messages_list_container';
 import MessageFormContainer from './message_form_container';
-import MembersListContainer from '../members/members_list_container';
+import MembersList from '../members/members_list';
 import MessagesHeaderContainer from './messages_header_container';
 import MainHeader from '../main/main_header';
 
@@ -38,7 +38,7 @@ class Messages extends React.Component {
           </div>
           <Route
             path="/channels/:serverId/:channelId"
-            component={MembersListContainer}
+            component={MembersList}
           />
         </div>
       </div>
