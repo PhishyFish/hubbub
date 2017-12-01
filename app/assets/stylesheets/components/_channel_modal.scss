@@ -55,6 +55,7 @@
 
 .channel-buttons {
   display: flex;
+  flex-direction: row-reverse;
   align-items: center;
   justify-content: flex-end;
   margin-top: 20px;

@@ -66,10 +66,14 @@ class ChannelModal extends React.Component {
             Anyone in this server will have access to read or connect to this channel
           </p>
           <div className="channel-buttons">
+            <button
+              className="channel-submit"
+              onClick={this.handleSubmit}>
+              Create Channel
+            </button>
             <button className="channel-cancel" onClick={this.closeModal}>
               Cancel
             </button>
-            <button className="channel-submit" onClick={this.handleSubmit}>Create Channel</button>
           </div>
         </form>
         <div className="channel-modal-backdrop" onClick={this.closeModal}></div>
