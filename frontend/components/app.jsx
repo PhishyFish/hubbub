@@ -6,6 +6,7 @@ import SessionFormContainer from './session_form/session_form_container';
 import SessionFormBackground from './session_form/session_form_background';
 import SplashContainer from './splash/splash_container';
 import MainContainer from './main/main_container';
+import DMModalContainer from './modals/dm_modal_container';
 
 const App = () => (
   <div className="app-container">
@@ -18,6 +19,8 @@ const App = () => (
       <AuthRoute path="/register" component={SessionFormContainer} />
       <ProtectedRoute path="/channels" component={MainContainer} />
     </Switch>
+
+    <ProtectedRoute path="/channels/:serverId" component={DMModalContainer} />
   </div>
 );
 

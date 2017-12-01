@@ -25,8 +25,8 @@ export const fetchDirectMessage = id => dispatch => (
   ))
 );
 
-export const createDirectMessage = dm => dispatch => (
-  DMUtil.createDirectMessage(dm).then(directMessage => (
+export const createDirectMessage = (dm, members) => dispatch => (
+  DMUtil.createDirectMessage(dm, members).then(directMessage => (
     dispatch(receiveDirectMessage(directMessage))
   ))
 );

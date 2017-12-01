@@ -19,10 +19,9 @@ class Api::DirectMessagesController < ApplicationController
   def create
     @direct_message = DirectMessage.new(dm_params)
 
-    # if params[:direct_message][:members].includes?(current_user)
     if @direct_message.save
-      if params[:directMessage][:members]
-        params[:directMessage][:members].each do |member|
+      if params[:members]
+        params[:members].each do |member|
           DirectMessageMember.create(
             member_id: member,
             direct_message_id: @direct_message.id

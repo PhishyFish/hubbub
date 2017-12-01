@@ -12,7 +12,7 @@ export const fetchDirectMessage = directMessageId => (
   })
 );
 
-export const createDirectMessage = directMessage => (
+export const createDirectMessage = (directMessage, members) => (
   $.ajax({
     method: 'POST',
     url: 'api/direct_messages',

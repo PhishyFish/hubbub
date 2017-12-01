@@ -1,11 +1,20 @@
 import React from 'react';
 
-const DMsListHeader = () => (
-  <div className="search-bar">
-    <div className="search-bar-inner">
-      <button>Find or start a conversation</button>
+const DMsListHeader = () => {
+  const openModal = e => {
+    e.preventDefault();
+    document.querySelector('.modal').classList.add('open');
+  };
+
+  return(
+    <div className="search-bar">
+      <div className="search-bar-inner">
+        <a href="#">
+          <button onClick={openModal}>Find or start a conversation</button>
+        </a>
+      </div>
     </div>
-  </div>
-);
+  );
+};
 
 export default DMsListHeader;

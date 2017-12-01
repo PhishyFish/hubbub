@@ -76,9 +76,20 @@ button {
   background: $black;
 }
 
+.icon-tiny {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+}
+
 hr {
   margin: 10px auto;
   width: 90%;
+}
+
+.spacer {
+  flex: 1 0;
+  padding: 5px;
 }
 
 .scroller {

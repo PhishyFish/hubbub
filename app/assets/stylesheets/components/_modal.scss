@@ -1,0 +1,143 @@
+.modal {
+  display: none;
+}
+
+.modal.open {
+  display: flex;
+  justify-content: center;
+}
+
+.modal-backdrop {
+  position: fixed;
+  background: rgba(0, 0, 0, 0.85);
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 3;
+}
+
+.modal-form {
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+  max-height: 375px;
+  padding: 20px 20px 10px 20px;
+  position: absolute;
+  top: 25%;
+  z-index: 4;
+  background: $channel-header;
+  border-radius: 8px;
+}
+
+.search {
+  margin: 20px 0 5px 0;
+  padding: 0 10px;
+  text-transform: uppercase;
+  color: $form-text;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.user-search {
+  flex: 1;
+  padding: 0 10px;
+  border-radius: 5px;
+  background: $channel-unselected;
+  font-size: 24px;
+  line-height: 70px;
+  color: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2), 0 0 0 1px rgba(0, 0, 0, 0.1);
+}
+
+.user-results {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid $form-gray;
+}
+
+.user-results .scroller {
+  display: flex;
+  flex-direction: column;
+  height: 250px;
+}
+
+.user-result {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  padding: 5px 10px;
+  height: 25px;
+  border-radius: 5px;
+}
+
+.user-result:hover {
+  background: $channel-scrollbar;
+  cursor: pointer;
+}
+
+.user-result.selected {
+  background: $purple;
+  order: -1;
+}
+
+.user-result .username {
+  margin: 0 5px;
+  text-overflow: inherit;
+  overflow: auto;
+  font-size: 16px;
+  color: $channel-icon;
+}
+
+.user-result .user-id {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 300;
+}
+
+.modal-buttons {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-top: 10px;
+  font-size: 14px;
+  text-transform: uppercase;
+}
+
+.modal-close, .modal-submit {
+  padding: 3px 10px 7px 10px;
+  border-radius: 2px;
+  border: 1px solid $black;
+  transition: all 0.2s ease-in-out;
+}
+
+.modal-close:active, .modal-submit:active {
+  transform: translateY(3px);
+  padding-bottom: 3px;
+  box-shadow: none;
+}
+
+.modal-close {
+  margin-right: 10px;
+  background: $modal-cancel;
+  color: $gray;
+  box-shadow: inset 0 -4px 0 $channel-scrollbar;
+}
+
+.modal-close:hover {
+  background: $add-gray;
+  color: $add-hover;
+}
+
+.modal-submit {
+  background: $green;
+  color: #fff;
+  opacity: 0.75;
+  box-shadow: inset 0 -4px 0 $dark-green;
+}
+
+.modal-submit:hover {
+  opacity: 1;
+}
