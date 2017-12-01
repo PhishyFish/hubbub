@@ -11,7 +11,7 @@ class MembersListItem extends React.Component {
     return(
       <div className="member">
         <div className="icon-small">
-          <img src={user.img_url} />
+          <img src={user.img_url} className="icon-small" />
         </div>
         <span className="member-username">{user.username}</span>
       </div>

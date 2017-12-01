@@ -1,6 +1,8 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 
+import MembersListItem from './members_list_item';
+
 class MembersList extends React.Component {
   constructor(props) {
     super(props);
@@ -28,18 +30,26 @@ class MembersList extends React.Component {
   }
 
   render() {
-    if (this.props.channel) {
+    if (this.props.channel && this.props.channel.members) {
       return (
         <div className="members-container">
           <div className="scroller-wrap">
             <div className="members scroller">
               <h2>Members—{this.memberCount()}</h2>
+              {this.props.channel.members.map(user => {
+                return <MembersListItem user={user} />;
+              })}
             </div>
           </div>
         </div>
       );
     } else {
-      return "Loading...";
+      return (
+        <div class="spinner">
+          <div class="cube1"></div>
+          <div class="cube2"></div>
+        </div>
+      );
     }
 
   }

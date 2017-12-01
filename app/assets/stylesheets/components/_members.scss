@@ -2,6 +2,7 @@
   flex: 0 0 auto;
   width: 240px;
   background: $channel-gray;
+  overflow: hidden;
 }
 
 .members {
@@ -18,4 +19,17 @@
 
 .member, .members h2 {
   padding: 5px 30px;
+}
+
+.member {
+  display: flex;
+  align-items: center;
+  flex: 1;
+}
+
+.member-username {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: $member-username;
 }
