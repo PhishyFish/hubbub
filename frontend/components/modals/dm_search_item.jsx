@@ -15,7 +15,7 @@ class DMSearchItem extends React.Component {
 
   toggleSelect(e) {
     e.preventDefault(e);
-    console.log(e.currentTarget.value);
+    
     if (e.currentTarget.classList.contains('selected')) {
       e.currentTarget.classList.remove('selected');
     } else {

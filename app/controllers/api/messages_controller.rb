@@ -21,6 +21,24 @@ class Api::MessagesController < ApplicationController
     end
 
     if @message.save
+      if @message.created_at == @message.updated_at
+        time = @message.created_at.localtime.strftime("%A, %B %d, %Y at %I:%M %p")
+      else
+        time = "Edited at" + @message.updated_at.localtime.strftime("%A, %B %d, %Y at %I:%M %p")
+      end
+
+      Pusher.trigger("#{params[:serverId]}-#{params[:channelId]}", 'create-message',
+        {
+          id: @message.id,
+          body: @message.body,
+          author: {
+            id: @message.author.id,
+            username: @message.author.username,
+            img_url: @message.author.img_url
+          },
+          created_at: time
+        }
+      )
       render :show
     else
       render json: @message.errors.full_messages, status: 400

@@ -32,7 +32,7 @@ class DMModal extends React.Component {
     this.setState({
       members: this.state.members.concat(member),
       names: this.state.names.concat(name)
-    }, () => console.log(this.state.members));
+    });
   }
 
   removeMember(member, name) {
@@ -72,9 +72,6 @@ class DMModal extends React.Component {
     let userResults = this.props.users.filter(({ username }) => (
       username.toLowerCase().indexOf(this.state.search.toLowerCase()) !== -1
     ));
-    document.addEventListener('keypress', () => {
-      console.log(this.state.members);
-    });
 
     return(
       <div className="modal">
@@ -91,7 +88,6 @@ class DMModal extends React.Component {
                 <div className="spacer" style={{ order: -3 }}></div>
                 <span className="search">Searching all users</span>
                 {userResults.map(user => {
-                  console.log(this.state.members, user.id);
                   let searchItem;
                   if (this.state.members.includes(user.id.toString())) {
                     searchItem =

@@ -9,10 +9,15 @@ class MessagesList extends React.Component {
   }
 
   componentDidMount() {
-    this.props.fetchMessages(
-      this.props.match.params.serverId,
-      this.props.match.params.channelId
-    );
+    let { serverId, channelId } = this.props.match.params;
+
+    this.props.fetchMessages(serverId, channelId);
+
+    const channel = pusher.subscribe(`${serverId}-${channelId}`);
+
+    channel.bind('create-message', message => {
+      this.props.fetchMessages(serverId, channelId);
+    });
   }
 
   componentWillReceiveProps(newProps) {
@@ -21,6 +26,19 @@ class MessagesList extends React.Component {
         newProps.match.params.serverId,
         newProps.match.params.channelId
       );
+
+      pusher.unsubscribe(
+        `${this.props.match.params.serverId}-${this.props.match.params.channelId}`
+      );
+      const channel = pusher.subscribe(
+        `${newProps.match.params.serverId}-${newProps.match.params.channelId}`
+      );
+      channel.bind('create-message', message => {
+        this.props.fetchMessages(
+          newProps.match.params.serverId,
+          newProps.match.params.channelId
+        );
+      });
     }
   }
 
@@ -35,6 +53,11 @@ class MessagesList extends React.Component {
     if (this.shouldScroll) {
       this.scrollToBottom();
     }
+  }
+
+  componentWillUnmount() {
+    let { serverId, channelId } = this.props.match.params;
+    pusher.unsubscribe(`${serverId}-${channelId}`);
   }
 
   scrollToBottom() {
