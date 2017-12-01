@@ -9,6 +9,7 @@ class ChannelsList extends React.Component {
   }
 
   componentDidMount() {
+    console.log("hi");
     this.props.fetchChannels(this.props.match.params.serverId);
   }
 

@@ -10,6 +10,8 @@ import DMsListHeader from '../direct_messages/dms_list_header';
 import ChannelHeaderModal from '../modals/channel_header_modal';
 
 class Channels extends React.Component {
+
+
   render() {
     return (
       <div className="channels-container flex-column">
