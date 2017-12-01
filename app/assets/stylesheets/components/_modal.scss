@@ -37,6 +37,7 @@
   color: $form-text;
   font-size: 13px;
   font-weight: 600;
+  order: -2;
 }
 
 .user-search {
@@ -48,6 +49,10 @@
   line-height: 70px;
   color: #fff;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2), 0 0 0 1px rgba(0, 0, 0, 0.1);
+}
+
+input.user-search::placeholder {
+  color: rgba(255,255,255,0.5);
 }
 
 .user-results {
@@ -67,6 +72,7 @@
   flex: 0 0 auto;
   display: flex;
   align-items: center;
+  margin: 1px 0;
   padding: 5px 10px;
   height: 25px;
   border-radius: 5px;
@@ -80,17 +86,24 @@
 .user-result.selected {
   background: $purple;
   order: -1;
+  .search-username {
+    color: #fff;
+  }
+  .serach-user-id {
+    color: rgba(255, 255, 255, 0.8);
+  }
 }
 
-.user-result .username {
+.user-result .search-username {
   margin: 0 5px;
+  max-width: none;
   text-overflow: inherit;
   overflow: auto;
   font-size: 16px;
   color: $channel-icon;
 }
 
-.user-result .user-id {
+.user-result .search-user-id {
   margin: 0;
   font-size: 16px;
   font-weight: 300;

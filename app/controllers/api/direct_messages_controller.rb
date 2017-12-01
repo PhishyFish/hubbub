@@ -18,15 +18,14 @@ class Api::DirectMessagesController < ApplicationController
 
   def create
     @direct_message = DirectMessage.new(dm_params)
+    @direct_message.name = @direct_message.name + ", #{current_user.username}"
 
-    if @direct_message.save
-      if params[:members]
-        params[:members].each do |member|
-          DirectMessageMember.create(
-            member_id: member,
-            direct_message_id: @direct_message.id
-          )
-        end
+    if params[:members].length > 0 && @direct_message.save
+      params[:members].each do |member|
+        DirectMessageMember.create(
+          member_id: member,
+          direct_message_id: @direct_message.id
+        )
       end
 
       DirectMessageMember.create(

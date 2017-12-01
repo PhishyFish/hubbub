@@ -8,6 +8,7 @@ class MessagesListItem extends React.Component {
 
   render() {
     let { message } = this.props;
+    
     return(
       <div className="message-group">
         <div className="message-icon">

@@ -16,7 +16,7 @@ export const createDirectMessage = (directMessage, members) => (
   $.ajax({
     method: 'POST',
     url: 'api/direct_messages',
-    data: { directMessage }
+    data: { directMessage, members }
   })
 );
 

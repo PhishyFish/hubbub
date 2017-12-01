@@ -9,14 +9,15 @@ class DMModal extends React.Component {
     this.state = {
       search: '',
       users: props.users,
-      members: []
+      members: [],
+      names: []
     };
 
     this.updateSearch = this.updateSearch.bind(this);
-    this.addMember = this.addMember.bind(this);
-    this.removeMember = this.removeMember.bind(this);
     this.closeModal = this.closeModal.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.addMember = this.addMember.bind(this);
+    this.removeMember = this.removeMember.bind(this);
   }
 
   componentDidMount() {
@@ -27,14 +28,24 @@ class DMModal extends React.Component {
     this.setState({ search: e.target.value });
   }
 
-  addMember(member) {
-    this.setState({ members: this.state.members.concat(member) });
+  addMember(member, name) {
+    this.setState({
+      members: this.state.members.concat(member),
+      names: this.state.names.concat(name)
+    }, () => console.log(this.state.members));
   }
 
-  removeMember(member) {
+  removeMember(member, name) {
     let newMembers = this.state.members;
+    let newNames = this.state.names;
     let idx = newMembers.indexOf(member[0]);
-    this.setState({ members: newMembers.splice(idx, 1) });
+    let nameIdx = newNames.indexOf(name[0]);
+    newMembers.splice(idx, 1);
+    newNames.splice(nameIdx, 1);
+    this.setState({
+      members: newMembers,
+      names: newNames
+    });
   }
 
   closeModal(e) {
@@ -44,8 +55,16 @@ class DMModal extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.createDirectMessage(this.state.members);
-    this.setState({ search: '' });
+    this.props.createDirectMessage(
+      { name: this.state.names.join(", ") },
+      this.state.members
+    );
+    this.setState({ search: '', members: [], names: [] });
+    [].forEach.call(document.getElementsByClassName('user-result'), (el) => {
+      if (el.classList.contains('selected')) {
+        el.classList.remove('selected');
+      }
+    });
     this.closeModal(e);
   }
 
@@ -53,6 +72,9 @@ class DMModal extends React.Component {
     let userResults = this.props.users.filter(({ username }) => (
       username.toLowerCase().indexOf(this.state.search.toLowerCase()) !== -1
     ));
+    document.addEventListener('keypress', () => {
+      console.log(this.state.members);
+    });
 
     return(
       <div className="modal">
@@ -66,14 +88,30 @@ class DMModal extends React.Component {
           <div className="user-results">
             <div className="scroller-wrap">
               <div className="scroller">
+                <div className="spacer" style={{ order: -3 }}></div>
                 <span className="search">Searching all users</span>
-                {userResults.map(user => (
-                  <DMSearchItem user={user}
-                    key={user.id}
-                    addMember={this.addMember}
-                    removeMember={this.removeMember}
-                  />
-                ))}
+                {userResults.map(user => {
+                  console.log(this.state.members, user.id);
+                  let searchItem;
+                  if (this.state.members.includes(user.id.toString())) {
+                    searchItem =
+                      <DMSearchItem user={user}
+                        selected="true"
+                        key={user.id}
+                        addMember={this.addMember}
+                        removeMember={this.removeMember}
+                      />;
+                  } else {
+                    searchItem =
+                      <DMSearchItem user={user}
+                        selected="false"
+                        key={user.id}
+                        addMember={this.addMember}
+                        removeMember={this.removeMember}
+                      />;
+                  }
+                  return searchItem;
+                })}
                 <div className="spacer"></div>
               </div>
             </div>

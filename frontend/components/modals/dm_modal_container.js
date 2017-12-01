@@ -10,7 +10,8 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  fetchUsers: serverId => dispatch(fetchUsers(serverId))
+  fetchUsers: serverId => dispatch(fetchUsers(serverId)),
+  createDirectMessage: (dm, members) => dispatch(createDirectMessage(dm, members))
 });
 
 export default withRouter(

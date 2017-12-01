@@ -6,44 +6,52 @@ class DMSearchItem extends React.Component {
     super(props);
 
     this.state = {
-      member: []
+      member: [],
+      name: []
     };
 
     this.toggleSelect = this.toggleSelect.bind(this);
-    this.toggleMember = this.toggleMember.bind(this);
   }
 
   toggleSelect(e) {
     e.preventDefault(e);
-    if (e.target.classList.contains('selected')) {
-      e.target.classList.add('selected');
+    console.log(e.currentTarget.value);
+    if (e.currentTarget.classList.contains('selected')) {
+      e.currentTarget.classList.remove('selected');
     } else {
-      e.target.classList.remove('selected');
+      e.currentTarget.classList.add('selected');
     }
 
-    this.toggleMember(e);
-  }
+    let arr = e.currentTarget.value.split(',');
+    let member = [arr[0]];
+    let name = [arr[1]];
 
-  toggleMember(e) {
-    let member = [e.target.value];
-
-    if (e.target.classList.contains('selected')) {
-      this.props.addMember(member);
+    if (e.currentTarget.classList.contains('selected') && name) {
+      this.props.addMember(member, name);
     } else {
-      this.props.removeMember(member);
+      this.props.removeMember(member, name);
     }
   }
 
   render() {
     let { user } = this.props;
+    let selected;
+    if (this.props.selected === "true") {
+      selected = "selected";
+    } else {
+      selected = "";
+    }
+
     return(
-      <div className="user-result" onClick={this.toggleSelect} value={user.id}>
+      <button className={`user-result ${selected}`}
+        onClick={this.toggleSelect}
+        value={[user.id, user.username]}>
         <div className="icon-tiny">
           <img className="icon-tiny" src={user.img_url} />
         </div>
-        <span className="username">{user.username}</span>
-        <span className="user-id">#{user.id}</span>
-      </div>
+        <span className="search-username">{user.username}</span>
+        <span className="search-user-id">#{user.id}</span>
+      </button>
     );
   }
 }
