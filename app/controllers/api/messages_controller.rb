@@ -27,7 +27,7 @@ class Api::MessagesController < ApplicationController
         time = "Edited at" + @message.updated_at.localtime.strftime("%A, %B %d, %Y at %I:%M %p")
       end
 
-      Pusher.trigger("#{params[:serverId]}-#{params[:channelId]}", 'create-message',
+      Pusher.trigger("#{params[:serverId]}-#{params[:channelId]}", 'new-message',
         {
           id: @message.id,
           body: @message.body,
