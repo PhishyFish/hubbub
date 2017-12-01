@@ -17,7 +17,7 @@ class MessagesList extends React.Component {
 
     channel.bind('create-message', message => {
       this.props.fetchMessages(serverId, channelId);
-    });
+    }, this);
   }
 
   componentWillReceiveProps(newProps) {
@@ -38,7 +38,7 @@ class MessagesList extends React.Component {
           newProps.match.params.serverId,
           newProps.match.params.channelId
         );
-      });
+      }, this);
     }
   }
 
