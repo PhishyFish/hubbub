@@ -1,13 +1,14 @@
-.modal, .channel-modal {
+.modal, .channel-modal, .server-modal, .server-add-modal {
   display: none;
 }
 
-.modal.open, .channel-modal.open {
+.modal.open, .channel-modal.open, .server-modal.open, .server-add-modal.open {
   display: flex;
   justify-content: center;
 }
 
-.modal-backdrop, .channel-modal-backdrop {
+.modal-backdrop, .channel-modal-backdrop, .server-modal-backdrop,
+.server-add-modal-backdrop {
   position: fixed;
   background: rgba(0, 0, 0, 0.85);
   top: 0;
@@ -17,7 +18,7 @@
   z-index: 3;
 }
 
-.modal-form {
+.modal-form, .server-form, .server-add-form {
   display: flex;
   flex-direction: column;
   width: 500px;
@@ -26,7 +27,7 @@
   position: absolute;
   top: 25%;
   z-index: 4;
-  background: $channel-header;
+  background: $channel-gray;
   border-radius: 8px;
 }
 

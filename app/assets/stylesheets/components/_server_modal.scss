@@ -1,0 +1,181 @@
+.server-form, .server-add-form {
+  background: #fff;
+  color: $dropdown-text;
+  align-items: center;
+
+  header {
+    margin: 10px 0;
+    font-size: 20px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: $purple;
+  }
+
+  p {
+    margin: 0 10px;
+    text-align: center;
+  }
+
+  h5 {
+    font-family: 'Source Sans Pro', $sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 10px;
+    line-height: 16px;
+    font-size: 12px;
+    color: $gray;
+  }
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 20px;
+  width: 100%;
+}
+
+.action {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  width: 48%;
+  background: hsla(0, 0%, 100%, 0.75);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 3px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+  box-sizing: border-box;
+  font-weight: 300;
+
+  h3 {
+    margin-top: 0;
+    font-family: 'Source Sans Pro', $sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    text-transform: uppercase;
+  }
+
+  button {
+    width: 100%;
+    padding: 15px 20px;
+    box-sizing: border-box;
+    color: #fff;
+    font-weight: 400;
+  }
+}
+
+.action-icon {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin: 20px 0;
+  padding: 0 10px;
+  width: 100%;
+}
+
+.create {
+  h3, i {
+    color: $purple;
+  }
+  button {
+    background: $purple;
+  }
+  button:hover {
+    background: $darker-purple;
+  }
+}
+
+.join {
+  h3, i {
+    color: $green;
+  }
+  button {
+    background: $green;
+  }
+  button:hover {
+    background: $darker-green;
+  }
+}
+
+.server-add-inner {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 0 10px;
+  box-sizing: border-box;
+}
+
+.server-add-form {
+  input {
+    margin: 12px 0;
+    line-height: 34px;
+    box-sizing: border-box;
+    z-index: 4;
+    border: none;
+    border-bottom: 1px solid #f0f0f0;
+    color: $channel-gray;
+    font-size: 16px;
+    font-weight: 400;
+    margin-bottom: 1px;
+    outline: none;
+    resize: none;
+    width: 100%;
+  }
+
+  input:focus {
+    border-bottom: 2px solid #7289da;
+    margin-bottom: 0;
+  }
+
+  input::placeholder {
+    color: $form-gray;
+  }
+}
+
+.server-buttons {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: space-between;
+  flex: 0 0 auto;
+  margin: 20px 10px 8px 10px;
+  width: 100%;
+
+  button {
+    min-height: 40px;
+    min-width: 50px;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 2px 15px;
+    transition: all 0.2s ease;
+    border-bottom: 2px solid transparent;
+  }
+}
+
+.server-submit {
+  background: $purple;
+  color: #fff;
+}
+
+.server-submit:hover {
+  background: $darker-purple;
+}
+
+.server-cancel {
+  color: $dropdown-text;
+  text-transform: uppercase;
+  i {
+    margin-right: 10px;
+  }
+}
+
+button.server-cancel {
+  margin-left: 8px;
+  padding: 2px;
+}
+
+.server-cancel:hover {
+  border-bottom: 2px solid $gray;
+}
