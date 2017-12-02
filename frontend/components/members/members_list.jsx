@@ -23,7 +23,6 @@ class MembersList extends React.Component {
   }
 
   memberCount() {
-    console.error(this.props.channel);
     if (this.props.channel.members) {
       return(this.props.channel.members.length);
     }
