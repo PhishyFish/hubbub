@@ -41,3 +41,5 @@ Users can create individual or group direct messages with each other. To start a
 ![channels](http://g.recordit.co/MIILRmMxNX.gif)
 
 Multiple channels are available in a server. Members can separate conversations by topic and easily navigate between channels.
+
+The message model forms polymorphic associations between channels and direct messages. They are differentiated in the React state by looking at URL params, with a `/channels/@me` URL denoting a direct message.
