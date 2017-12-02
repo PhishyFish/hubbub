@@ -61,15 +61,16 @@ class DMModal extends React.Component {
   }
 
   handleSubmit(e) {
-    let { history, fetchDirectMessages } = this.props;
     e.preventDefault();
+    let { history, fetchDirectMessages } = this.props;
+
     this.props.createDirectMessage(
       { name: this.state.names.join(", ") },
       this.state.members
     ).then(() => fetchDirectMessages()
       .then(() => history.push(
         `/channels/@me/${this.props.directMessages[this.props.directMessages.length - 1].id}`
-      )));
+    )));
 
     this.setState({ search: '', members: [], names: [] });
     [].forEach.call(document.getElementsByClassName('user-result'), (el) => {
@@ -77,6 +78,7 @@ class DMModal extends React.Component {
         el.classList.remove('selected');
       }
     });
+    
     this.closeModal(e);
   }
 

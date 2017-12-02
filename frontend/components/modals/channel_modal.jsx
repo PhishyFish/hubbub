@@ -24,6 +24,7 @@ class ChannelModal extends React.Component {
 
   closeModal(e) {
     e.preventDefault();
+    this.setState({ name: '' });
     document.querySelector('.channel-modal').classList.remove('open');
   }
 
@@ -40,11 +41,13 @@ class ChannelModal extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
+    let { serverId } = this.props.match.params;
 
-    this.props.createChannel(
-      { name: this.state.name },
-      this.props.match.params.serverId
-    );
+    this.props.createChannel({ name: this.state.name }, serverId)
+      .then(() => this.props.fetchChannels(serverId)
+      .then(() => this.props.history.push(
+        `/channels/${serverId}/${this.props.channels[this.props.channels.length - 1].id}`
+    )));
 
     this.closeModal(e);
   }

@@ -1,14 +1,18 @@
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 
-import { createChannel } from '../../actions/channel_actions';
+import { createChannel, fetchChannels } from '../../actions/channel_actions';
 import ChannelModal from './channel_modal';
 
 const mapStateToProps = state => ({
+  channels: Object.values(state.entities.channels)
 });
 
 const mapDispatchToProps = dispatch => ({
-  createChannel: (ch, serverId) => dispatch(createChannel(ch, serverId))
+  createChannel: (ch, serverId) => dispatch(createChannel(ch, serverId)),
+  fetchChannels: serverId => dispatch(fetchChannels(serverId))
 });
 
-export default withRouter(connect(null, mapDispatchToProps)(ChannelModal));
+export default withRouter(
+  connect(mapStateToProps, mapDispatchToProps)(ChannelModal)
+);
