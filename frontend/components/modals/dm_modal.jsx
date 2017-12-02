@@ -56,6 +56,7 @@ class DMModal extends React.Component {
 
   closeModal(e) {
     e.preventDefault();
+    this.setState({ search: '', members: [], names: [] });
     document.querySelector('.modal').classList.remove('open');
   }
 

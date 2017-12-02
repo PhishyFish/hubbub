@@ -9,9 +9,12 @@
   overflow: hidden;
 }
 
+.members.scroller {
+  height: calc(100vh - 48px);
+}
+
 .members.scroller:hover {
   overflow-y: scroll;
-  height: calc(100vh - 48px);
 }
 
 .members h2 {
