@@ -37,7 +37,7 @@ class MembersList extends React.Component {
             <div className="members scroller">
               <h2>Members—{this.memberCount()}</h2>
               {this.props.channel.members.map(user => {
-                return <MembersListItem user={user} />;
+                return <MembersListItem user={user} key={user.id}/>;
               })}
               <div className="spacer"></div>
             </div>
