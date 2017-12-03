@@ -77,7 +77,7 @@ class ChannelModal extends React.Component {
             </button>
           </div>
         </form>
-        <div className="channel-modal-backdrop" onClick={this.closeModal}></div>
+        <div className="modal-backdrop" onClick={this.closeModal}></div>
       </div>
     );
   }

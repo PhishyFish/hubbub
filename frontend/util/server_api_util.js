@@ -1,7 +1,8 @@
-export const fetchServers = () => (
+export const fetchServers = users => (
   $.ajax({
     method: 'GET',
-    url: 'api/servers'
+    url: 'api/servers',
+    data: users
   })
 );
 

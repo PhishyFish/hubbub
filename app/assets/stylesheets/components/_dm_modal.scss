@@ -1,4 +1,4 @@
-.modal, .channel-modal, .server-modal, .server-add-modal {
+.modal, .channel-modal, .server-modal, .server-add-modal, .server-join-modal {
   display: none;
 }
 
@@ -7,8 +7,7 @@
   justify-content: center;
 }
 
-.modal-backdrop, .channel-modal-backdrop, .server-modal-backdrop,
-.server-add-modal-backdrop {
+.modal-backdrop {
   position: fixed;
   background: rgba(0, 0, 0, 0.85);
   top: 0;

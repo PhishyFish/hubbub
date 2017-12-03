@@ -55,16 +55,16 @@ class ServerModal extends React.Component {
 
   render() {
     return (
-      <div className="server-add-modal">
-        <form className="server-add-form">
+      <div className="server-join-modal">
+        <form className="server-join-form">
           <header>Create your server</header>
           <p>By creating a server, you will have access to instant messaging
             with anyone who joins your server.</p>
-          <div className="server-add-inner">
+          <div className="server-join-inner">
             <h5>Server Name</h5>
             <input type="text"
               autoFocus="true"
-              className="server-add-input"
+              className="server-join-input"
               onChange={this.updateName}
               value={this.state.name}
               placeholder="Enter a server name"

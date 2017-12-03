@@ -2,7 +2,7 @@ class Api::ServersController < ApplicationController
   before_action :require_login
 
   def index
-    @servers = current_user.servers
+    @servers = params[:users] == "all" ? Server.all : current_user.servers
     render :index
   end
 

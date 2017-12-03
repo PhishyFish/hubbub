@@ -22,7 +22,6 @@ class DMModal extends React.Component {
   }
 
   componentDidMount() {
-    this.props.fetchUsers(this.props.match.params.serverId);
     document.addEventListener('keyup', e => this.handleKeyUp(e));
   }
 
@@ -78,7 +77,7 @@ class DMModal extends React.Component {
         el.classList.remove('selected');
       }
     });
-    
+
     this.closeModal(e);
   }
 

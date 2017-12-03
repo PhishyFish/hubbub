@@ -13,8 +13,8 @@ export const receiveServer = server => ({
   server
 });
 
-export const fetchServers = () => dispatch => (
-  ServerUtil.fetchServers().then(servers => (
+export const fetchServers = users => dispatch => (
+  ServerUtil.fetchServers(users).then(servers => (
     dispatch(receiveServers(servers))
   ))
 );
