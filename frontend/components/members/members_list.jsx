@@ -18,7 +18,7 @@ class MembersList extends React.Component {
   componentWillReceiveProps(newProps) {
     let { serverId } = this.props.match.params;
     if (this.props.match.url !== newProps.match.url) {
-      this.props.fetchUsers(serverId);
+      this.props.fetchUsers(newProps.match.params.serverId);
     }
   }
 

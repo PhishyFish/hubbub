@@ -49,16 +49,6 @@ class ServerModal extends React.Component {
               </div>
               <button onClick={this.openCreate}>Create a Server</button>
             </div>
-            <div className="action join">
-              <h3>Join</h3>
-              <p>Late to the party? Find an existing server.</p>
-              <div className="action-icon">
-                <i className="fa fa-user-o fa-3x" aria-hidden="true"></i>
-                <i className="fa fa-long-arrow-right fa-3x" aria-hidden="true"></i>
-                <i className="fa fa-users fa-4x" aria-hidden="true"></i>
-              </div>
-              <button onClick={this.openJoin}>Join a Server</button>
-            </div>
           </div>
         </div>
         <div className="server-modal-backdrop" onClick={this.closeModal}></div>

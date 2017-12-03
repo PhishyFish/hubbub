@@ -46,9 +46,10 @@ class ServerModal extends React.Component {
     this.props.createServer({ name: this.state.name })
       .then(() => this.props.fetchServers())
       .then(() => this.props.history.push(
-        `/channels/${this.props.servers[this.props.servers.length - 1].id}`
+        `/channels/${this.props.servers[this.props.servers.length - 1].id}/${this.props.servers[this.props.servers.length - 1].channels[0].id}`
     ));
 
+    this.setState({ name: '' });
     this.closeModal(e);
   }
 
