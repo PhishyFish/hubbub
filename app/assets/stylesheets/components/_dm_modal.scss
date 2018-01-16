@@ -106,6 +106,9 @@ input.user-search::placeholder {
   overflow: auto;
   font-size: 16px;
   color: $channel-icon;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .user-result .search-user-id {
