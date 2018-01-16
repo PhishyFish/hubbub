@@ -1,10 +1,12 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom';
 
 class ServerModal extends React.Component {
   constructor(props) {
     super(props);
 
     this.closeModal = this.closeModal.bind(this);
+    this.openJoin = this.openJoin.bind(this);
   }
 
   componentDidMount() {
@@ -24,6 +26,7 @@ class ServerModal extends React.Component {
 
   openJoin(e) {
     e.preventDefault();
+    this.props.fetchServers({ join: "true" });
     document.querySelector('.server-modal').classList.remove('open');
     document.querySelector('.server-join-modal').classList.add('open');
   }
@@ -67,4 +70,4 @@ class ServerModal extends React.Component {
   }
 }
 
-export default ServerModal;
+export default withRouter(ServerModal);

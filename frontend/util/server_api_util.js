@@ -1,8 +1,8 @@
-export const fetchServers = users => (
+export const fetchServers = join => (
   $.ajax({
     method: 'GET',
     url: 'api/servers',
-    data: users
+    data: join
   })
 );
 
@@ -26,5 +26,13 @@ export const updateServer = server => (
     method: 'PATCH',
     url: `api/servers/${server.id}`,
     data: { server }
+  })
+);
+
+export const joinServer = serverId => (
+  $.ajax({
+    method: 'POST',
+    url: 'api/server_members',
+    data: { serverId }
   })
 );

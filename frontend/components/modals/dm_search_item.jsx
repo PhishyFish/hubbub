@@ -15,7 +15,7 @@ class DMSearchItem extends React.Component {
 
   toggleSelect(e) {
     e.preventDefault(e);
-    
+
     if (e.currentTarget.classList.contains('selected')) {
       e.currentTarget.classList.remove('selected');
     } else {
@@ -37,13 +37,13 @@ class DMSearchItem extends React.Component {
     let { user } = this.props;
     let selected;
     if (this.props.selected === "true") {
-      selected = "selected";
+      selected = " selected";
     } else {
       selected = "";
     }
 
     return(
-      <button className={`user-result ${selected}`}
+      <button className={`user-result${selected}`}
         onClick={this.toggleSelect}
         value={[user.id, user.username]}>
         <div className="icon-tiny">

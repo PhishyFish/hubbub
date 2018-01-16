@@ -6,7 +6,7 @@ import SessionFormContainer from './session_form/session_form_container';
 import SessionFormBackground from './session_form/session_form_background';
 import SplashContainer from './splash/splash_container';
 import MainContainer from './main/main_container';
-import ServerModal from './modals/server_modal';
+import ServerModalContainer from './modals/server_modal_container';
 import ServerAddModalContainer from './modals/server_add_modal_container';
 import ServerJoinModalContainer from './modals/server_join_modal_container';
 import DMModalContainer from './modals/dm_modal_container';
@@ -24,7 +24,7 @@ const App = () => (
       <ProtectedRoute path="/channels" component={MainContainer} />
     </Switch>
 
-    <ProtectedRoute path="/channels/" component={ServerModal} />
+    <ProtectedRoute path="/channels/" component={ServerModalContainer} />
     <ProtectedRoute path="/channels/" component={ServerAddModalContainer} />
     <ProtectedRoute path="/channels/" component={ServerJoinModalContainer} />
     <ProtectedRoute path="/channels/:serverId" component={DMModalContainer} />

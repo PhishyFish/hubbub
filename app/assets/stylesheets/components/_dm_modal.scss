@@ -2,7 +2,8 @@
   display: none;
 }
 
-.modal.open, .channel-modal.open, .server-modal.open, .server-add-modal.open {
+.modal.open, .channel-modal.open, .server-modal.open, .server-add-modal.open,
+.server-join-modal.open {
   display: flex;
   justify-content: center;
 }
@@ -17,7 +18,7 @@
   z-index: 3;
 }
 
-.modal-form, .server-form, .server-add-form {
+.modal-form, .server-form, .server-add-form, .server-join-form {
   display: flex;
   flex-direction: column;
   width: 500px;
@@ -49,11 +50,11 @@
   line-height: 70px;
   color: #fff;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2), 0 0 0 1px rgba(0, 0, 0, 0.1);
+  z-index: 4;
 }
 
 input.user-search::placeholder {
   color: rgba(255, 255, 255, 0.5);
-  z-index: 2;
 }
 
 .user-results {
@@ -61,12 +62,15 @@ input.user-search::placeholder {
   display: flex;
   flex-direction: column;
   border-bottom: 1px solid $form-gray;
-}
+  overflow: hidden;
 
-.user-results .scroller {
-  display: flex;
-  flex-direction: column;
-  height: 250px;
+  .scroller {
+    display: flex;
+    flex-direction: column;
+    width: 514px;
+    height: 250px;
+    padding-right: 20px;
+  }
 }
 
 .user-result {
@@ -90,7 +94,7 @@ input.user-search::placeholder {
   .search-username {
     color: #fff;
   }
-  .serach-user-id {
+  .search-user-id {
     color: rgba(255, 255, 255, 0.8);
   }
 }
@@ -108,6 +112,7 @@ input.user-search::placeholder {
   margin: 0;
   font-size: 16px;
   font-weight: 300;
+  opacity: 0.4;
 }
 
 button.user-result {

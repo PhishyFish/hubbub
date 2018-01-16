@@ -5,7 +5,7 @@ class ServerModal extends React.Component {
     super(props);
 
     this.state = {
-      name: '',
+      name: ''
     };
 
     this.closeModal = this.closeModal.bind(this);
@@ -16,6 +16,10 @@ class ServerModal extends React.Component {
 
   componentDidMount() {
     document.addEventListener('keyup', e => this.handleKeyUp(e));
+  }
+
+  componentWillUnmount() {
+    document.removeEventListener('keyup', e => this.handleKeyUp(e));
   }
 
   closeModal(e) {
@@ -64,11 +68,10 @@ class ServerModal extends React.Component {
             <h5>Server Name</h5>
             <input type="text"
               autoFocus="true"
-              className="server-add-input"
               onChange={this.updateName}
               value={this.state.name}
               placeholder="Enter a server name"
-              />
+            />
           </div>
           <div className="server-buttons">
             <button
@@ -77,7 +80,8 @@ class ServerModal extends React.Component {
               Create Server
             </button>
             <button className="server-cancel" onClick={this.openActions}>
-              <i className="fa fa-long-arrow-left" aria-hidden="true"></i> Back
+              <i className="fa fa-long-arrow-left" aria-hidden="true"></i>
+              Back
             </button>
           </div>
         </form>

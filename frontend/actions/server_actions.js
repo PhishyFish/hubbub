@@ -13,8 +13,8 @@ export const receiveServer = server => ({
   server
 });
 
-export const fetchServers = users => dispatch => (
-  ServerUtil.fetchServers(users).then(servers => (
+export const fetchServers = join => dispatch => (
+  ServerUtil.fetchServers(join).then(servers => (
     dispatch(receiveServers(servers))
   ))
 );
@@ -33,6 +33,12 @@ export const createServer = srv => dispatch => (
 
 export const updateServer = srv => dispatch => (
   ServerUtil.updateServer(srv).then(server => (
+    dispatch(receiveServer(server))
+  ))
+);
+
+export const joinServer = srv => dispatch => (
+  ServerUtil.joinServer(srv).then(server => (
     dispatch(receiveServer(server))
   ))
 );

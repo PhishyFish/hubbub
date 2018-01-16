@@ -2,7 +2,11 @@ class Api::ServersController < ApplicationController
   before_action :require_login
 
   def index
-    @servers = params[:users] == "all" ? Server.all : current_user.servers
+    if params[:join] == "true"
+      @servers = Server.all.where.not(id: current_user.servers)
+    else
+      @servers = current_user.servers
+    end
     render :index
   end
 

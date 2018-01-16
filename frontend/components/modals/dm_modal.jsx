@@ -6,6 +6,7 @@ import DMSearchItem from './dm_search_item';
 class DMModal extends React.Component {
   constructor(props) {
     super(props);
+
     this.state = {
       search: '',
       users: props.users,
@@ -72,7 +73,7 @@ class DMModal extends React.Component {
     )));
 
     this.setState({ search: '', members: [], names: [] });
-    [].forEach.call(document.getElementsByClassName('user-result'), (el) => {
+    [].forEach.call(document.getElementsByClassName('user-result'), el => {
       if (el.classList.contains('selected')) {
         el.classList.remove('selected');
       }

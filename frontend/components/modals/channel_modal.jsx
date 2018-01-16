@@ -59,6 +59,7 @@ class ChannelModal extends React.Component {
           <h4>Create Text Channel</h4>
           <h5>Channel Name</h5>
           <input type="text"
+            autoFocus="true"
             className="channel-input"
             onChange={this.updateName}
             value={this.state.name}

@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 
-import { createServer, fetchServers } from '../../actions/server_actions';
+import { fetchServers, joinServer } from '../../actions/server_actions';
 import ServerJoinModal from './server_join_modal';
 
 const mapStateToProps = state => ({
@@ -9,8 +9,8 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  createServer: server => dispatch(createServer(server)),
-  fetchServers: users => dispatch(fetchServers(users))
+  fetchServers: () => dispatch(fetchServers()),
+  joinServer: server => dispatch(joinServer(server))
 });
 
 export default withRouter(
