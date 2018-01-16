@@ -75,17 +75,17 @@ class ServerModal extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
 
-    let id = parseInt(this.state.serverId);
-    let server = this.props.servers[id];
+    if (this.state.serverId !== '') {
+      let id = parseInt(this.state.serverId);
+      let server = this.props.servers[id];
 
-    this.props.joinServer(id)
+      this.props.joinServer(id)
       .then(() => this.props.fetchServers())
-      .then(() => this.props.history.push(
-        `/channels/${id}/${server.channels[0].id}`
-    ));
+      .then(() => this.props.history.push(`/channels/${id}`));
 
-    this.setState({ serverId: '' });
-    this.closeModal(e);
+      this.setState({ serverId: '' });
+      this.closeModal(e);
+    }
   }
 
   render() {
