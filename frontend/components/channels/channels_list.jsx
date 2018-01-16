@@ -9,12 +9,19 @@ class ChannelsList extends React.Component {
   }
 
   componentDidMount() {
-    this.props.fetchChannels(this.props.match.params.serverId);
+    let { match, history } = this.props;
+    this.props.fetchChannels(match.params.serverId)
+      .then(() => history.push(
+        `${match.url}/${this.props.channels[0].id}`
+      ));
   }
 
   componentWillReceiveProps(newProps) {
     if (this.props.match.params.serverId !== newProps.match.params.serverId) {
-      newProps.fetchChannels(newProps.match.params.serverId);
+      newProps.fetchChannels(newProps.match.params.serverId)
+        .then(() => this.props.history.push(
+          `${this.props.match.url}/${this.props.channels[0].id}`
+        ));
     }
   }
 

@@ -12,7 +12,7 @@ const ServersListItem = ({ server, channels }) => {
   }
 
   return (
-    <NavLink to={`/channels/${server.id}/${channels[0].id}`} className="tooltip-icon">
+    <NavLink to={`/channels/${server.id}`} className="tooltip-icon">
       <div className="icon server">
         {icon}
       </div>
