@@ -21,6 +21,14 @@ class Api::ChannelsController < ApplicationController
     @channel.server_id = current_server.id
 
     if @channel.save
+      Pusher.trigger(
+        "#{@channel.server_id}-channels",
+        "new-channel", 
+        id: @channel.id,
+        name: @channel.name,
+        messages: []
+      )
+
       render :show
     else
       render json: @channel.errors.full_messages, status: 400

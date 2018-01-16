@@ -27,18 +27,19 @@ class Api::MessagesController < ApplicationController
         time = "Edited at" + @message.updated_at.localtime.strftime("%A, %B %d, %Y at %I:%M %p")
       end
 
-      Pusher.trigger("#{params[:serverId]}-#{params[:channelId]}", 'new-message',
-        {
-          id: @message.id,
-          body: @message.body,
-          author: {
-            id: @message.author.id,
-            username: @message.author.username,
-            img_url: @message.author.img_url
-          },
-          created_at: time
-        }
+      Pusher.trigger(
+        "#{params[:serverId]}-#{params[:channelId]}",
+        "new-message",
+        id: @message.id,
+        body: @message.body,
+        author: {
+          id: @message.author.id,
+          username: @message.author.username,
+          img_url: @message.author.img_url
+        },
+        created_at: time
       )
+      
       render :show
     else
       render json: @message.errors.full_messages, status: 400
