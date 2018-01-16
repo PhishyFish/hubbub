@@ -10,10 +10,15 @@ class ChannelsList extends React.Component {
 
   componentDidMount() {
     let { match, history } = this.props;
-    this.props.fetchChannels(match.params.serverId)
+
+    if (match.exact) {
+      this.props.fetchChannels(match.params.serverId)
       .then(() => history.push(
         `${match.url}/${this.props.channels[0].id}`
       ));
+    } else {
+      this.props.fetchChannels(match.params.serverId);
+    }
   }
 
   componentWillReceiveProps(newProps) {
