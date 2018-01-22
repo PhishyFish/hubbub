@@ -4,7 +4,7 @@ Hubbub is a live chat web application based on [Discord](https://www.discordapp.
 
 ## Overview
 
-Hubbub is built with React + Redux on the front-end and Ruby on Rails and PostgreSQL on the back-end. State is updated based on the data returned form the JSON API via Rails.
+Hubbub is built with React + Redux on the front-end and Ruby on Rails and PostgreSQL on the back-end. State is updated based on the data returned from the JSON API via Rails.
 
 ## Features
 
