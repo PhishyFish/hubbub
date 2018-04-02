@@ -16,6 +16,7 @@
     "webpack": "^3.8.1"
   },
   "devDependencies": {
+    "jest": "^22.4.3",
     "redux-logger": "^3.0.6"
   },
   "description": "Hubbub is a live chat web application based on [Discord](https://www.discordapp.com/), offering multi-server and multi-channel support, as well as multi-person direct messages.",
@@ -37,7 +38,10 @@
     "type": "git",
     "url": "git+https://github.com/PhishyFish/hubbub.git"
   },
-  "keywords": ["live chat", "Discord"],
+  "keywords": [
+    "live chat",
+    "Discord"
+  ],
   "author": "Vickie Chen",
   "license": "ISC",
   "bugs": {
