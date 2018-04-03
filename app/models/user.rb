@@ -16,7 +16,7 @@ class User < ApplicationRecord
 
   validates :username, :password_digest, :session_token, :img_url, presence: true
   validates :username, :session_token, uniqueness: true
-  validates :password, length: { minimum: 6 }
+  validates :password, length: { minimum: 6 }, allow_nil: true
 
   has_many :messages, foreign_key: :author_id
   has_many :direct_message_members, foreign_key: :member_id
