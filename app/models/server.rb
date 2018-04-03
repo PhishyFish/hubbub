@@ -16,5 +16,5 @@ class Server < ApplicationRecord
   has_many :channels
   has_many :server_members
   has_many :members, through: :server_members, source: :member
-  has_one :owner, foreign_key: :owner_id, class_name: "User"
+  belongs_to :owner, foreign_key: :owner_id, class_name: "User"
 end

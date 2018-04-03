@@ -7,6 +7,7 @@ RSpec.describe User, type: :model do
     it { should have_many(:direct_messages).through(:direct_message_members) }
     it { should have_many(:server_members) }
     it { should have_many(:servers).through(:server_members) }
+    it { should have_many(:owned_servers) }
   end
 
   describe 'validations' do

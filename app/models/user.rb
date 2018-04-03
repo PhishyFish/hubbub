@@ -23,6 +23,7 @@ class User < ApplicationRecord
   has_many :direct_messages, through: :direct_message_members, source: :direct_message
   has_many :server_members, foreign_key: :member_id
   has_many :servers, through: :server_members, source: :server
+  has_many :owned_servers, foreign_key: :owner_id, class_name: "Server"
 
   after_initialize :ensure_token
 
