@@ -26,4 +26,16 @@ RSpec.describe User, type: :model do
     it { should validate_uniqueness_of(:username) }
     it { should validate_uniqueness_of(:session_token) }
   end
+
+  describe 'password encryption' do
+    it 'should not save password to database' do
+      User.create!(
+        username: "Sneezer",
+        password: "blessyou"
+      )
+
+      user = User.find_by(username: "Sneezer")
+      expect(user.password).not_to be("blessyou")
+    end
+  end
 end
