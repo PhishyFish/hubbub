@@ -31,17 +31,17 @@ class Splash extends React.Component {
       <div className="splash-container">
         <header className="flex-space-between">
           <div className="splash-logo flex-space-between">
-            <i className="fa fa-comments-o fa-2x" aria-hidden="true"></i>
+            <i className="fas fa-comments fa-2x" aria-hidden="true"></i>
             <h1>Hubbub</h1>
           </div>
           <nav className="flex-space-between">
             <a href="https://www.github.com/phishyfish"
               aria-label="Vickie's GitHub">
-              <i className="fa fa-github fa-lg" aria-hidden="true"></i>
+              <i className="fab fa-github fa-lg" aria-hidden="true"></i>
             </a>
             <a href="https://www.linkedin.com/in/vickie-chen"
               aria-label="Vickie's LinkedIn">
-              <i className="fa fa-linkedin fa-lg" aria-hidden="true"></i>
+              <i className="fab fa-linkedin fa-lg" aria-hidden="true"></i>
             </a>
             <button className="splash-button"
               onClick={this.demoLogin}>
