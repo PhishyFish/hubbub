@@ -35,14 +35,14 @@
   color: #fff;
 }
 
-.button-logout i {
+.button-logout i, .button-logout svg {
   opacity: 0;
   position: absolute;
   left: -30px;
   transition: all 0.28s;
 }
 
-.button-logout:hover i {
+.button-logout:hover i, .button-logout:hover svg {
   opacity: 1;
   left: 15px;
 }

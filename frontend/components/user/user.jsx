@@ -16,7 +16,7 @@ class User extends React.Component {
           </div>
         </div>
         <button className="button-logout" onClick={this.props.logout}>
-          <i className="fa fa-sign-out" aria-hidden="true"></i>
+          <i className="fas fa-sign-out-alt" aria-hidden="true"></i>
           Log Out
         </button>
       </div>
