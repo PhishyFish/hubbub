@@ -10,7 +10,7 @@ class MessageForm extends React.Component {
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
-    this.handleKeyPress = this.handleKeyPress.bind(this);
+    this.handleKeyDown = this.handleKeyDown.bind(this);
     this.adjustHeight = this.adjustHeight.bind(this);
   }
 
@@ -22,12 +22,14 @@ class MessageForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
+
     let { params } = this.props.match;
     this.props.createMessage(
-      { body: e.target.value },
+      { body: e.target.value.trim() },
       params.channelId,
       params.serverId
     );
+
     e.target.value = '';
   }
 
@@ -35,42 +37,46 @@ class MessageForm extends React.Component {
     this.setState({ body: e.target.value });
   }
 
-  handleKeyPress(e) {
-    if (e.key === 'Enter') {
-      this.handleSubmit(e);
+  handleKeyDown(e) {
+    let messageBody = e.target.value.trim();
+
+    if (e.key === 'Enter' && !e.shiftKey) {
+      e.preventDefault();
+      if (messageBody) this.handleSubmit(e);
     }
   }
 
   adjustHeight(e) {
     e.target.style.height = 'auto';
+
     if (e.target.scrollHeight < 146) {
-      e.target.style.height = (e.target.scrollHeight) + 'px';
+      e.target.style.height = e.target.scrollHeight + 'px';
     } else {
       e.target.style.height = 145 + 'px';
     }
   }
 
   renderChannelName() {
-    if (this.props.currentChannel) {
-      return(this.props.currentChannel.name);
-    }
+    let { currentChannel, match } = this.props;
+    let sym = match.params.serverId === '@me' ? '' : '#';
+    return currentChannel ? `Message ${sym}${currentChannel.name}` : '';
   }
 
   render() {
     return (
       <form onSubmit={this.handleSubmit}>
         <div className="message-input">
-          <textarea
+          <textarea autoFocus
             className="chat"
             style={{ height: 'auto' }}
             rows="1"
-            placeholder={`Message ${this.renderChannelName()}`}
+            placeholder={this.renderChannelName()}
             value={this.state.body}
             onChange={this.handleChange}
-            onKeyPress={this.handleKeyPress}
+            onKeyDown={this.handleKeyDown}
             onKeyUp={this.adjustHeight}
-          >
-          </textarea>
+            ref={node => node && node.focus()}
+          />
         </div>
       </form>
     );
