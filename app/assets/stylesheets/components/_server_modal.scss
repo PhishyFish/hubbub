@@ -302,7 +302,7 @@
 .server-cancel {
   color: $dropdown-text;
   text-transform: uppercase;
-  i {
+  i, svg {
     margin-right: 10px;
   }
 }

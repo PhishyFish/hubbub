@@ -134,7 +134,7 @@ class ServerModal extends React.Component {
               Join Server
             </button>
             <button className="server-cancel" onClick={this.openActions}>
-              <i className="fa fa-long-arrow-left" aria-hidden="true"></i> Back
+              <i className="fas fa-long-arrow-alt-left" aria-hidden="true"></i> Back
             </button>
           </div>
         </form>
