@@ -79,9 +79,10 @@ class ServerModal extends React.Component {
       let id = parseInt(this.state.serverId);
       let server = this.props.servers[id];
 
-      this.props.joinServer(id)
-      .then(() => this.props.fetchServers())
-      .then(() => this.props.history.push(`/channels/${id}`));
+      this.props
+        .joinServer(id)
+        .then(() => this.props.fetchServers())
+        .then(() => this.props.history.push(`/channels/${id}`));
 
       this.setState({ serverId: '' });
       this.closeModal(e);
@@ -90,9 +91,10 @@ class ServerModal extends React.Component {
 
   render() {
     let serverList;
-    let serverResults = this.props.servers.filter(({ name }) => (
-      name.toLowerCase().indexOf(this.state.search.toLowerCase()) !== -1
-    ));
+    let serverResults = this.props.servers.filter(
+      ({ name }) =>
+        name.toLowerCase().indexOf(this.state.search.toLowerCase()) !== -1
+    );
     serverList = this.state.search === '' ? this.props.servers : serverResults;
 
     return (
@@ -102,7 +104,8 @@ class ServerModal extends React.Component {
           <p>Select an existing server or search for one by name.</p>
           <div className="server-join-inner">
             <h5>Server Name</h5>
-            <input type="text"
+            <input
+              type="text"
               autoFocus="true"
               onChange={this.updateSearch}
               value={this.state.search}
@@ -112,33 +115,34 @@ class ServerModal extends React.Component {
           <div className="server-results">
             <div className="scroller-wrap">
               <div className="scroller">
-                <div className="spacer" style={{ order: -3 }}></div>
+                <div className="spacer" style={{ order: -3 }} />
                 <span className="search">Searching all servers</span>
-                  {serverList.map(server => (
-                    <button className="search-result"
-                      onClick={this.toggleSelect}
-                      value={server.id}
-                      key={server.id}>
-                      <span className="search-server-name">{server.name}</span>
-                      <span className="search-server-id">#{server.id}</span>
-                    </button>
-                  ))}
-                <div className="spacer"></div>
+                {serverList.map(server => (
+                  <button
+                    className="search-result"
+                    onClick={this.toggleSelect}
+                    value={server.id}
+                    key={server.id}
+                  >
+                    <span className="search-server-name">{server.name}</span>
+                    <span className="search-server-id">#{server.id}</span>
+                  </button>
+                ))}
+                <div className="spacer" />
               </div>
             </div>
           </div>
           <div className="server-buttons">
-            <button
-              className="server-submit"
-              onClick={this.handleSubmit}>
+            <button className="server-submit" onClick={this.handleSubmit}>
               Join Server
             </button>
             <button className="server-cancel" onClick={this.openActions}>
-              <i className="fas fa-long-arrow-alt-left" aria-hidden="true"></i> Back
+              <i className="fas fa-long-arrow-alt-left" aria-hidden="true" />{' '}
+              Back
             </button>
           </div>
         </form>
-        <div className="modal-backdrop" onClick={this.closeModal}></div>
+        <div className="modal-backdrop" onClick={this.closeModal} />
       </div>
     );
   }
