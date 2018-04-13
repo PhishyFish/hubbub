@@ -32,13 +32,13 @@ class ServersList extends React.Component {
   }
 
   render() {
-    return(
+    return (
       <div className="servers-container flex-column">
         <div className="scroller-wrap">
           <section className="servers scroller">
             <NavLink to="/channels/@me" className="tooltip-icon">
               <div className="icon friends">
-                <i className="fa fa-users fa-lg"></i>
+                <i className="fa fa-users fa-lg" />
               </div>
               <div className="tooltips">
                 <span className="tooltip">Direct Messages</span>
@@ -51,7 +51,8 @@ class ServersList extends React.Component {
               <ServersListItem
                 server={server}
                 channels={server.channels}
-                key={server.id} />
+                key={server.id}
+              />
             ))}
 
             <button className="icon add-server" onClick={this.openModal}>
