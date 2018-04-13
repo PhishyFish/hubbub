@@ -47,11 +47,16 @@ class ServerModal extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
 
-    this.props.createServer({ name: this.state.name })
+    this.props
+      .createServer({ name: this.state.name })
       .then(() => this.props.fetchServers())
-      .then(() => this.props.history.push(
-        `/channels/${this.props.servers[this.props.servers.length - 1].id}/${this.props.servers[this.props.servers.length - 1].channels[0].id}`
-    ));
+      .then(() =>
+        this.props.history.push(
+          `/channels/${this.props.servers[this.props.servers.length - 1].id}/${
+            this.props.servers[this.props.servers.length - 1].channels[0].id
+          }`
+        )
+      );
 
     this.setState({ name: '' });
     this.closeModal(e);
@@ -62,30 +67,31 @@ class ServerModal extends React.Component {
       <div className="server-add-modal">
         <form className="server-add-form">
           <header>Create your server</header>
-          <p>By creating a server, you will have access to instant messaging
-            with anyone who joins your server.</p>
+          <p>
+            By creating a server, you will have access to instant messaging with
+            anyone who joins your server.
+          </p>
           <div className="server-add-inner">
             <h5>Server Name</h5>
-            <input type="text"
-              autoFocus="true"
+            <input
+              autoFocus
+              type="text"
               onChange={this.updateName}
               value={this.state.name}
               placeholder="Enter a server name"
             />
           </div>
           <div className="server-buttons">
-            <button
-              className="server-submit"
-              onClick={this.handleSubmit}>
+            <button className="server-submit" onClick={this.handleSubmit}>
               Create Server
             </button>
             <button className="server-cancel" onClick={this.openActions}>
-              <i className="fas fa-long-arrow-alt-left" aria-hidden="true"></i>
+              <i className="fas fa-long-arrow-alt-left" aria-hidden="true" />
               Back
             </button>
           </div>
         </form>
-        <div className="modal-backdrop" onClick={this.closeModal}></div>
+        <div className="modal-backdrop" onClick={this.closeModal} />
       </div>
     );
   }

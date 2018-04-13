@@ -105,8 +105,8 @@ class ServerModal extends React.Component {
           <div className="server-join-inner">
             <h5>Server Name</h5>
             <input
+              autoFocus
               type="text"
-              autoFocus="true"
               onChange={this.updateSearch}
               value={this.state.search}
               placeholder="Enter a server name"
@@ -137,7 +137,7 @@ class ServerModal extends React.Component {
               Join Server
             </button>
             <button className="server-cancel" onClick={this.openActions}>
-              <i className="fas fa-long-arrow-alt-left" aria-hidden="true" />{' '}
+              <i className="fas fa-long-arrow-alt-left" aria-hidden="true" />
               Back
             </button>
           </div>
