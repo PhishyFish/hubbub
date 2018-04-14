@@ -45,6 +45,8 @@
   cursor: pointer;
 }
 
-.popout-menu-item i {
-  margin: 0 10px;
+.popout-menu-item {
+  i, svg {
+    margin: 0 10px;
+  }
 }

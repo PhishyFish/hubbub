@@ -15,8 +15,10 @@
   margin-top: 0;
 }
 
-.icon .friends i {
-  width: 100%;
+.icon .friends {
+  i, svg {
+    width: 100%;
+  }
 }
 
 .icon span {

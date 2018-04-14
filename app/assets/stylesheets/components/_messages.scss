@@ -17,8 +17,10 @@
   box-shadow: 0 1px 0 rgba(0,0,0,.2), 0 2px 0 rgba(0,0,0,.06);
 }
 
-.messages-header i {
-  color: $message-header-icon;
+.messages-header {
+  i, svg {
+    color: $message-header-icon;
+  }
 }
 
 .messages, .message-group, .message-input, .message-input textarea {

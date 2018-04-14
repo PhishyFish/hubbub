@@ -64,13 +64,20 @@ class DMModal extends React.Component {
     e.preventDefault();
     let { history, fetchDirectMessages } = this.props;
 
-    this.props.createDirectMessage(
-      { name: this.state.names.join(", ") },
-      this.state.members
-    ).then(() => fetchDirectMessages()
-      .then(() => history.push(
-        `/channels/@me/${this.props.directMessages[this.props.directMessages.length - 1].id}`
-    )));
+    this.props
+      .createDirectMessage(
+        { name: this.state.names.join(', ') },
+        this.state.members
+      )
+      .then(() =>
+        fetchDirectMessages().then(() =>
+          history.push(
+            `/channels/@me/${
+              this.props.directMessages[this.props.directMessages.length - 1].id
+            }`
+          )
+        )
+      );
 
     this.setState({ search: '', members: [], names: [] });
     [].forEach.call(document.getElementsByClassName('user-result'), el => {
@@ -89,14 +96,16 @@ class DMModal extends React.Component {
   }
 
   render() {
-    let userResults = this.props.users.filter(({ username }) => (
-      username.toLowerCase().indexOf(this.state.search.toLowerCase()) !== -1
-    ));
+    let userResults = this.props.users.filter(
+      ({ username }) =>
+        username.toLowerCase().indexOf(this.state.search.toLowerCase()) !== -1
+    );
 
-    return(
+    return (
       <div className="modal">
         <form className="modal-form">
-          <input type="text"
+          <input
+            type="text"
             className="user-search"
             onChange={this.updateSearch}
             value={this.state.search}
@@ -105,45 +114,47 @@ class DMModal extends React.Component {
           <div className="user-results">
             <div className="scroller-wrap">
               <div className="scroller">
-                <div className="spacer" style={{ order: -3 }}></div>
+                <div className="spacer" style={{ order: -3 }} />
                 <span className="search">Searching all users</span>
                 {userResults.map(user => {
                   let searchItem;
                   if (this.state.members.includes(user.id.toString())) {
-                    searchItem =
-                      <DMSearchItem user={user}
+                    searchItem = (
+                      <DMSearchItem
+                        user={user}
                         selected="true"
                         key={user.id}
                         addMember={this.addMember}
                         removeMember={this.removeMember}
-                      />;
+                      />
+                    );
                   } else {
-                    searchItem =
-                      <DMSearchItem user={user}
+                    searchItem = (
+                      <DMSearchItem
+                        user={user}
                         selected="false"
                         key={user.id}
                         addMember={this.addMember}
                         removeMember={this.removeMember}
-                      />;
+                      />
+                    );
                   }
                   return searchItem;
                 })}
-                <div className="spacer"></div>
+                <div className="spacer" />
               </div>
             </div>
           </div>
           <div className="modal-buttons">
-            <button className="modal-close"
-              onClick={this.closeModal}>
+            <button className="modal-close" onClick={this.closeModal}>
               Cancel
             </button>
-            <button className="modal-submit"
-              onClick={this.handleSubmit}>
+            <button className="modal-submit" onClick={this.handleSubmit}>
               Create Direct Message
             </button>
           </div>
         </form>
-        <div className="modal-backdrop" onClick={this.closeModal}></div>
+        <div className="modal-backdrop" onClick={this.closeModal} />
       </div>
     );
   }
