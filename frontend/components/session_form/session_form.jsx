@@ -4,6 +4,7 @@ import { Link, withRouter } from 'react-router-dom';
 class SessionForm extends React.Component {
   constructor(props) {
     super(props);
+    this.userInput = React.createRef();
 
     this.state = {
       username: '',
@@ -26,6 +27,10 @@ class SessionForm extends React.Component {
     let randomNum = Math.floor(avatars.length * Math.random());
 
     this.state['img_url'] = avatars[randomNum];
+  }
+
+  componentWillReceiveProps(_) {
+    this.userInput.current.focus();
   }
 
   update(field) {
@@ -145,6 +150,7 @@ class SessionForm extends React.Component {
               id="session-form-username"
               value={this.state.username}
               onChange={this.update('username')}
+              ref={this.userInput}
             />
             <label htmlFor="session-form-password">Password</label>
             <input
