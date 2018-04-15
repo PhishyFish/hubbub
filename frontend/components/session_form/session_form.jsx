@@ -29,24 +29,22 @@ class SessionForm extends React.Component {
   }
 
   update(field) {
-    return e => this.setState({
-      [field]: e.currentTarget.value
-    });
+    return e => this.setState({ [field]: e.currentTarget.value });
   }
 
   handleSubmit(e) {
     e.preventDefault();
     const user = this.state;
-    this.props.processForm({user});
+    this.props.processForm({ user });
   }
 
   renderErrors() {
     if (this.props.errors) {
-      return(
+      return (
         <ul>
           {this.props.errors.map((error, i) => (
             <li key={`error-${i}`}>
-              <i className="fa fa-exclamation-circle" aria-hidden="true"></i>
+              <i className="fa fa-exclamation-circle" aria-hidden="true" />
               &nbsp; {error}
             </li>
           ))}
@@ -74,11 +72,10 @@ class SessionForm extends React.Component {
   formFooter() {
     if (this.props.formType === 'login') {
       return (
-        <footer>Need an account? &nbsp;
+        <footer>
+          Need an account? &nbsp;
           <Link to="/register">Register</Link> or &nbsp;
-          <a onClick={this.demoLogin}>
-            log in as guest
-          </a>
+          <a onClick={this.demoLogin}>log in as guest</a>
         </footer>
       );
     } else {
@@ -93,9 +90,26 @@ class SessionForm extends React.Component {
 
   demoLogin() {
     const demoUsers = [
-      'sheepie', 'pnut', 'Sneezy', 'ZigZag', 'Slush', 'Ampharos', 'Loki',
-      'bluebelle', 'Boston', 'Kyoto', 'bacon', 'Rick', 'Morty', 'Summer',
-      'Snowball', 'santaslilhelper', 'Markov', 'Curie', 'breakfast', 'Sennacy'
+      'sheepie',
+      'pnut',
+      'Sneezy',
+      'ZigZag',
+      'Slush',
+      'Ampharos',
+      'Loki',
+      'bluebelle',
+      'Boston',
+      'Kyoto',
+      'bacon',
+      'Rick',
+      'Morty',
+      'Summer',
+      'Snowball',
+      'santaslilhelper',
+      'Markov',
+      'Curie',
+      'breakfast',
+      'Sennacy'
     ];
 
     let randomNum = Math.floor(demoUsers.length * Math.random());
@@ -115,14 +129,17 @@ class SessionForm extends React.Component {
       <div className="session-form-container flex-column-center">
         <section className="session-form-box">
           <div className="session-form-logo flex-column-center">
-            <h1>Hubbub</h1>
+            <Link to="/">
+              <h1>Hubbub</h1>
+            </Link>
           </div>
           <form className="session-form" onSubmit={this.handleSubmit}>
             {this.formGreeting()}
             {this.renderErrors()}
             <label htmlFor="session-form-username">Username</label>
-            <input type="text"
-              autoFocus="true"
+            <input
+              autoFocus
+              type="text"
               autoComplete="off"
               spellCheck="false"
               id="session-form-username"
@@ -130,7 +147,8 @@ class SessionForm extends React.Component {
               onChange={this.update('username')}
             />
             <label htmlFor="session-form-password">Password</label>
-            <input type="password"
+            <input
+              type="password"
               autoComplete="off"
               spellCheck="false"
               id="session-form-password"
